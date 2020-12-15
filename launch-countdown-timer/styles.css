@@ -1,0 +1,142 @@
+@import url('https://fonts.googleapis.com/css2?family=Red+Hat+Text:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  background: #1e272e;
+  background-image: url(assets/bg-stars.svg);
+  background-position: center;
+  background-size: cover;
+  font-family: 'Red Hat Text', sans-serif;
+}
+
+.container {
+  width: 100%;
+  margin: 8rem auto;
+}
+
+.row {
+  color: #fff;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 1rem;
+  letter-spacing: .5rem;
+  padding: 0 1rem 0 1rem;
+}
+
+.main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  margin: 7rem 0;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 3rem 0 3rem;
+}
+
+.number {
+  font-size: 5rem;
+  font-weight: bold;
+  color: #1e272e;
+  background: #f0f0f5;
+
+  border-radius: 5px;
+  
+  width: 10rem;
+  height: 10rem;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.text {
+  margin-top: 1rem;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #f0f0f5;
+}
+
+.bottom {
+  position: fixed;
+  bottom: 0;
+  background: url(assets/pattern-hills.svg);
+  
+  background-size: cover;
+  width: 100vw;
+  height: 20vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.bottom img {
+  cursor: pointer;
+  margin: 0 2rem 0 2rem;
+}
+
+.bottom img:hover {
+  opacity: .85;
+}
+
+@media(max-width: 730px) {
+  html {
+    font-size: 50%;
+  }
+
+  .row {
+    font-size: 1.4rem;
+  }
+
+  .main { 
+    margin: 9rem 0;
+  }
+
+  .bottom {
+    background-position: center;
+  }
+
+  @media(max-width: 620px) {
+    html {
+      font-size: 40%;
+    }
+
+    .main { 
+      margin: 11rem 0;
+    }
+  }
+
+  @media(max-width: 440px) {
+    html {
+      font-size: 30%;
+    }
+
+    .main { 
+      margin: 13rem 0;
+    }
+  }
+
+  @media(max-width: 295px) {
+    html {
+      font-size: 20%;
+    }
+
+    .main { 
+      margin: 15rem 0;
+    }
+  }
+}
