@@ -1,6 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap');
-
 * {
   margin: 0;
   padding: 0;
@@ -21,20 +20,11 @@ body, button, input {
   outline: 0;
 }
 
-.landing-page {
-
-}
-
-.navbar {
-
-}
-
 .navbar .container {
   width: 90%;
   max-width: 1280px;
   margin: 0 auto;
   padding: 1.5rem;
-
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -62,19 +52,24 @@ body, button, input {
   color: #fff;
 }
 
-.navbar .container ul li a:hover {
+.navbar .container ul li a:hover {}
 
+.landing-page {
+  height: calc(100vh - 58px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .illustration {
-  margin: 5rem 0;
   display: flex;
   justify-content: center;
 }
 
 .illustration img {
   width: 100%;
-  max-width: 45rem;
+  max-width: 30rem;
   height: auto;
 }
 
@@ -88,13 +83,14 @@ body, button, input {
 }
 
 .description .title {
-  font-size: 3rem;
+  font-size: 2.2rem;
+  margin-top: 2rem;
   font-weight: 700;
   width: 65rem;
 }
 
 .description .text {
-  font-size: 1.6rem;
+  font-size: 1.5rem;
   width: 50rem;
   margin: 2rem 0 3rem 0;
 }
@@ -102,10 +98,10 @@ body, button, input {
 .description button {
   background: hsl(198, 60%, 50%);
   color: #fff;
-  font-size: 1.8rem;
+  font-size: 1.6rem;
   font-weight: 700;
   padding: 1.5rem 8rem;
-  border-radius: 20rem;
+  border-radius: 2rem;
   cursor: pointer;
   transition: background .25s;
 }
@@ -143,17 +139,18 @@ body, button, input {
   gap: 5rem 5rem;
   width: 90%;
   max-width: 1280px;
-  margin: 8rem auto;
-
+  margin: 5rem auto;
   align-items: center;
+  justify-content: center;
 }
 
 .section .left {
-
+  text-align: center;
 }
 
 .section .left img {
   width: 100%;
+  max-width: 35rem;
   height: auto;
 }
 
@@ -185,12 +182,10 @@ body, button, input {
 .testemonials {
   width: 90%;
   max-width: 1280px;
-  margin: 0 auto;
-
+  margin: 5rem auto;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   gap: 1rem 3rem;
-
   position: relative;
 }
 
@@ -236,4 +231,120 @@ body, button, input {
 
 .testemonials .card .card-description span {
   font-size: 1.2rem;
+}
+
+.form {
+  width: 100%;
+  max-width: 980px;
+  margin: 0 auto;
+  text-align: center;
+  padding: 2rem 3rem;
+  color: #fff;
+}
+
+.form h1 {
+  font-size: 3rem;
+}
+
+.form p {
+  font-size: 1.7rem;
+  margin: 1.8rem 0;
+}
+
+.form .input-group {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.form .input-group input {
+  padding: 1.4rem 2rem;
+  width: 100%;
+  max-width: 45rem;
+  border-radius: 2rem;
+}
+
+.form .input-group button {
+  margin-left: 1rem;
+  padding: 1.3rem 2rem;
+  border-radius: 2rem;
+  font-size: 1.5rem;
+  font-weight: 700;
+  background: hsl(198, 60%, 50%);
+  color: #fff;
+  cursor: pointer;
+}
+
+@media(max-width: 695px) {
+  html {
+    font-size: 55%;
+  }
+
+  .card-area {
+    grid-template-columns: 1fr;
+  }
+
+  .section {
+    grid-template-columns: 1fr;
+    margin-bottom: 8rem;
+  }
+  
+  .section .right h1 {
+    width: 100%;
+  }
+
+  .testemonials {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media(max-width: 630px) {
+  html {
+    font-size: 55%;
+  }
+
+  .form .input-group {
+    flex-direction: column;
+  }
+
+  .form .input-group button {
+    margin-top: 1rem;
+    width: 100%;
+    max-width: 45rem;
+    margin-left: 0;
+  }
+}
+
+@media(max-width: 605px) {
+  .navbar .container ul {
+    display: none;
+  }
+
+  .navbar .container .menu-toogle {
+    height: 3.5rem;
+    width: 3.5rem;
+  }
+
+  .one, .two, .three {
+    width: 100%;
+    height: .5rem;
+    background: white;
+    margin: .5rem;
+  }
+
+  .landing-page .description .title {
+    width: 90%;
+  }
+
+  .landing-page .description .text {
+    font-size: 1.45rem;
+    width: 90%;
+  }
+}
+
+@media(max-height: 430px) {
+  .landing-page {
+    height: auto;
+    margin: 2rem 0;
+  }
 }
