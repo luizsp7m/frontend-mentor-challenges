@@ -275,24 +275,53 @@ body, button, input {
   cursor: pointer;
 }
 
+.bottom {
+  background: #0B1523;
+  padding: 5rem 0;
+}
+
+.bottom .container {
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  color: #fff;
+}
+
+.bottom .container .row {
+  margin-bottom: 2rem;
+}
+
+.bottom .container .row img {
+  width: 100%;
+  max-width: 15rem;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  font-size: 1.4rem;
+}
+
+.column {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
 @media(max-width: 695px) {
   html {
     font-size: 55%;
   }
-
   .card-area {
     grid-template-columns: 1fr;
   }
-
   .section {
     grid-template-columns: 1fr;
     margin-bottom: 8rem;
   }
-  
   .section .right h1 {
     width: 100%;
   }
-
   .testemonials {
     grid-template-columns: 1fr;
   }
@@ -302,11 +331,9 @@ body, button, input {
   html {
     font-size: 55%;
   }
-
   .form .input-group {
     flex-direction: column;
   }
-
   .form .input-group button {
     margin-top: 1rem;
     width: 100%;
@@ -319,23 +346,19 @@ body, button, input {
   .navbar .container ul {
     display: none;
   }
-
   .navbar .container .menu-toogle {
     height: 3.5rem;
     width: 3.5rem;
   }
-
   .one, .two, .three {
     width: 100%;
     height: .5rem;
     background: white;
     margin: .5rem;
   }
-
   .landing-page .description .title {
     width: 90%;
   }
-
   .landing-page .description .text {
     font-size: 1.45rem;
     width: 90%;

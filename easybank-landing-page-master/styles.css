@@ -1,0 +1,203 @@
+@import url('https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;400;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --dark-blue: hsl(233, 26%, 24%);
+  --lime-green: hsl(136, 65%, 51%);
+  --bright-cyan: hsl(192, 70%, 51%);
+  --white: hsl(0, 0%, 100%);
+  --light-gray: hsl(0, 0%, 98%);
+  --light-blue: hsl(220, 16%, 96%);
+  --grayish-blue: hsl(233, 8%, 62%);
+}
+
+html {
+  font-size: 62.5%;
+  background: var(--light-gray);
+}
+
+body, input, button {
+  font-family: 'Public Sans', sans-serif;
+}
+
+input, button {
+  border: none;
+  background: none;
+  outline: none;
+}
+
+.navbar {
+  background: var(--white);
+  z-index: 10;
+}
+
+.navbar .container {
+  width: 95%;
+  max-width: 1280px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 0rem;
+}
+
+.navbar .container img {
+  width: 100%;
+  max-width: 15rem;
+}
+
+.navbar .container ul {
+  display: flex;
+  list-style: none;
+}
+
+.navbar .container ul li {
+
+}
+
+.navbar .container ul li a {
+  font-size: 1.5rem;
+  margin: 0 .5rem;
+  text-decoration: none;
+  color: var(--grayish-blue);
+  padding: 2.5rem .95rem;
+  transition: color .1s;
+}
+
+.navbar .container ul li a:hover {
+  color: var(--dark-blue);
+  border-bottom: .3rem solid;
+  border-bottom-color: var(--lime-green);
+}
+
+.navbar .container button {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--white);
+  background: var(--lime-green);
+  padding: 1.35rem 4.3rem;
+  border-radius: 3rem;
+  cursor: pointer;
+  transition: background .3s;
+}
+
+.navbar .container button:hover {
+  background: var(--bright-cyan);
+}
+
+.hero {
+  height: calc(100vh - 73px);
+  background: url(assets/bg-intro-desktop.svg) no-repeat;
+  background-position: 600% 50%;
+
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+
+  position: relative;
+
+  z-index: -1;
+}
+
+.hero .container {
+  width: 95%;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.left h1 {
+  font-size: 4.2rem;
+  font-weight: 500;
+  width: 40rem;
+  color: var(--dark-blue);
+}
+
+.left p {
+  font-size: 2rem;
+  width: 50rem;
+  line-height: 3rem;
+  margin: 3rem 0;
+  color: var(--grayish-blue);
+}
+
+.left button {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--white);
+  background: var(--lime-green);
+  padding: 1.35rem 4.3rem;
+  border-radius: 3rem;
+  cursor: pointer;
+  transition: background .3s;
+}
+
+.left button:hover {
+  background: var(--bright-cyan);
+}
+
+.right img {
+  width: 100%;
+  max-width: 70rem;
+  height: auto;
+  position: absolute;
+  right: 0rem;
+  top: -10rem;
+  z-index: -1;
+}
+
+.section {
+  padding: 10rem 0;
+}
+
+.section .container {
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.row h1 {
+  font-size: 3rem;
+  font-weight: 500;
+  color: var(--dark-blue);
+}
+
+.row p {
+  font-size: 1.6rem;
+  margin: 1rem 0 0 0;
+  color: var(--grayish-blue);
+}
+
+.benefits {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 0rem 2rem;
+  padding: 4rem 0;
+}
+
+.card {
+  padding: 2rem;
+}
+
+.card img {
+  width: 100%;
+  max-width: 10rem;
+  height: auto;
+}
+
+.card h3 {
+  margin: 2rem 0;
+  font-size: 2rem;
+  color: var(--dark-blue);
+  font-weight: 600;
+}
+
+.card p {
+  font-size: 1.65rem;
+  line-height: 2rem;
+  color: var(--grayish-blue);
+}
