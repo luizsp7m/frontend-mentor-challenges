@@ -1,5 +1,4 @@
 @import url('https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;400;700&display=swap');
-
 * {
   margin: 0;
   padding: 0;
@@ -33,7 +32,6 @@ input, button {
 
 .navbar {
   background: var(--white);
-  z-index: 10;
 }
 
 .navbar .container {
@@ -57,7 +55,7 @@ input, button {
 }
 
 .navbar .container ul li {
-
+  
 }
 
 .navbar .container ul li a {
@@ -75,6 +73,10 @@ input, button {
   border-bottom-color: var(--lime-green);
 }
 
+.navbar .container .menu-toggle {
+  display: none;
+}
+
 .navbar .container button {
   font-size: 1.4rem;
   font-weight: 700;
@@ -90,64 +92,25 @@ input, button {
   background: var(--bright-cyan);
 }
 
+/* =================================== */
+
 .hero {
+  background: #007fff;
   height: calc(100vh - 73px);
-  background: url(assets/bg-intro-desktop.svg) no-repeat;
-  background-position: 660% 50%;
-
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-
-  position: relative;
-
-  z-index: -1;
 }
 
 .hero .container {
-  width: 95%;
-  max-width: 1200px;
-  margin: 0 auto;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
 }
 
-.left h1 {
-  font-size: 4.2rem;
-  font-weight: 500;
-  width: 40rem;
-  color: var(--dark-blue);
+.hero .container .left {
+  background: red;
 }
 
-.left p {
-  font-size: 2rem;
-  width: 50rem;
-  line-height: 3rem;
-  margin: 3rem 0;
-  color: var(--grayish-blue);
-}
-
-.left button {
-  font-size: 1.4rem;
-  font-weight: 700;
-  color: var(--white);
-  background: var(--lime-green);
-  padding: 1.35rem 4.3rem;
-  border-radius: 3rem;
-  cursor: pointer;
-  transition: background .3s;
-}
-
-.left button:hover {
-  background: var(--bright-cyan);
-}
-
-.right img {
-  width: 100%;
-  max-width: 70rem;
-  height: auto;
-  position: absolute;
-  right: 0rem;
-  top: -10rem;
-  z-index: -1;
+.hero .container .right {
+  
 }
 
 /* =================================== */
@@ -183,9 +146,7 @@ input, button {
   margin-top: 5rem;
 }
 
-.card {
-
-}
+.card {}
 
 .card img {
   width: 100%;
@@ -289,7 +250,6 @@ input, button {
   width: 95%;
   max-width: 1200px;
   margin: 0 auto;
-
   display: grid;
   grid-template-columns: 25fr 25fr 50fr;
   gap: 0rem 1rem;
@@ -362,13 +322,80 @@ input, button {
 }
 
 @media(max-width: 980px) {
+  .section .row {
+    text-align: center;
+  }
+  .benefits .card {
+    text-align: center;
+  }
   .benefits {
     grid-template-columns: 1fr 1fr;
     gap: 4rem 2rem;
   }
-
   .articles {
     grid-template-columns: 1fr 1fr;
     gap: 3rem 1rem;
+  }
+  .latest .title {
+    text-align: center;
+  }
+}
+
+@media(max-width: 830px) {
+  .footer .container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .footer .container .left {
+    justify-content: center;
+    align-items: center;
+  }
+
+  .footer .container .left .social img {
+    margin-top: 3rem;
+  }
+
+  .footer .container .center {
+    flex-direction: column;
+    text-align: center;
+    padding: 2rem 0rem;
+  }
+
+  .footer .container .right {
+    justify-content: center;
+    align-items: center;
+  }
+
+  .footer .container .right button {
+    margin-bottom: 3rem;
+  }
+}
+
+@media(max-width: 790px) {
+  .navbar .container button, 
+  .navbar .container ul {
+    display: none;
+  }
+
+  .navbar .container .menu-toggle {
+    display: block;
+    padding: .4rem 0rem;
+  }
+
+  .navbar .container .menu-toggle .bar {
+    width: 4rem;
+    height: .5rem;
+    margin: .5rem;
+    background: var(--dark-blue);
+  }
+}
+
+@media(max-width: 425px) {
+  html {
+    font-size: 50%;
+  }
+  .section .benefits, .latest .articles {
+    grid-template-columns: 1fr;
   }
 }
