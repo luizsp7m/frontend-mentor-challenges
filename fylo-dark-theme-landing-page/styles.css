@@ -11,13 +11,17 @@ html {
 }
 
 body {
-  background: hsl(217, 28%, 15%);
+  background: #181F2B;
 }
 
 body, button, input {
   font-family: 'Open Sans', sans-serif;
   border: none;
   outline: 0;
+}
+
+.navbar {
+  background: #1C2230;
 }
 
 .navbar .container {
@@ -60,6 +64,12 @@ body, button, input {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  background-color: #1C2230;
+  background-image: url('assets/bg-curvy-desktop.svg');
+  background-repeat: no-repeat;
+  background-position-x: center;
+  background-position-y: bottom;
+  background-size: cover;
 }
 
 .illustration {
@@ -116,7 +126,7 @@ body, button, input {
   gap: 6rem 10rem;
   width: 90%;
   max-width: 1280px;
-  margin: 5rem auto;
+  margin: 10rem auto;
 }
 
 .card-area .card {
@@ -139,7 +149,7 @@ body, button, input {
   gap: 5rem 5rem;
   width: 90%;
   max-width: 1280px;
-  margin: 5rem auto;
+  margin: 15rem auto;
   align-items: center;
   justify-content: center;
 }
@@ -235,11 +245,16 @@ body, button, input {
 
 .form {
   width: 100%;
-  max-width: 980px;
+  max-width: 715px;
   margin: 0 auto;
   text-align: center;
   padding: 2rem 3rem;
   color: #fff;
+  background: #181E2A;
+  position: relative;
+  bottom: -7rem;
+  z-index: 1;
+  border-radius: .75rem;
 }
 
 .form h1 {
@@ -247,8 +262,9 @@ body, button, input {
 }
 
 .form p {
-  font-size: 1.7rem;
-  margin: 1.8rem 0;
+  font-size: 1.4rem;
+  line-height: 2rem;
+  margin: 3rem 0;
 }
 
 .form .input-group {
@@ -277,11 +293,12 @@ body, button, input {
 
 .bottom {
   background: #0B1523;
-  padding: 5rem 0;
+  padding: 12rem 0 6rem 0;
+  position: relative;
 }
 
 .bottom .container {
-  width: 100%;
+  width: 90%;
   max-width: 1280px;
   margin: 0 auto;
   color: #fff;
@@ -298,42 +315,79 @@ body, button, input {
 
 .grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   font-size: 1.4rem;
+  gap: 3rem;
 }
 
 .column {
+  
+}
+
+.column:nth-child(2) {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.column .item {
   display: flex;
   align-items: flex-start;
-  gap: 1rem;
+  margin-bottom: 1.5rem;
 }
 
-@media(max-width: 695px) {
+.column img {
+  margin-right: 2rem;
+}
+
+.column .list {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.column .list ul {
+  list-style: none;
+}
+
+.column .list ul li {
+  margin-bottom: 1rem;
+}
+
+.column .list ul li a {
+  color: #fafafa;
+  text-decoration: 0;
+}
+
+.column .social {
+  display: flex;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.column .social .social-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 3rem;
+  width: 3rem;
+  border-radius: 50%;
+  border: 1px solid #fafafa;
+  margin: 0 1rem;
+}
+
+@media(max-width: 720px) {
   html {
     font-size: 55%;
   }
-  .card-area {
-    grid-template-columns: 1fr;
-  }
-  .section {
-    grid-template-columns: 1fr;
-    margin-bottom: 8rem;
-  }
-  .section .right h1 {
-    width: 100%;
-  }
-  .testemonials {
-    grid-template-columns: 1fr;
-  }
-}
 
-@media(max-width: 630px) {
-  html {
-    font-size: 55%;
+  .form {
+    max-width: 90%;
   }
+
   .form .input-group {
     flex-direction: column;
   }
+
   .form .input-group button {
     margin-top: 1rem;
     width: 100%;
@@ -342,23 +396,65 @@ body, button, input {
   }
 }
 
+@media(max-width: 695px) {
+  html {
+    font-size: 55%;
+  }
+
+  .card-area {
+    grid-template-columns: 1fr;
+  }
+
+  .section {
+    grid-template-columns: 1fr;
+    margin-bottom: 8rem;
+  }
+
+  .section .right h1 {
+    width: 100%;
+  }
+
+  .testemonials {
+    grid-template-columns: 1fr;
+  }
+
+  .column, .column:nth-child(2) {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .column .list {
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .column .social {
+    width: 100%;
+  }
+}
+
 @media(max-width: 605px) {
   .navbar .container ul {
     display: none;
   }
+
   .navbar .container .menu-toogle {
     height: 3.5rem;
     width: 3.5rem;
   }
+
   .one, .two, .three {
     width: 100%;
     height: .5rem;
     background: white;
     margin: .5rem;
   }
+
   .landing-page .description .title {
     width: 90%;
   }
+
   .landing-page .description .text {
     font-size: 1.45rem;
     width: 90%;
