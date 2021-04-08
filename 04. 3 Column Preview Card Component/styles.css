@@ -1,0 +1,147 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --light-gray: hsl(0, 0%, 95%);
+  --text: hsla(0, 0%, 100%, 0.75);
+  --orange: hsl(31, 77%, 52%);
+  --cyan: hsl(184, 100%, 22%);
+  --dark-cyan: hsl(179, 100%, 13%);
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  background: var(--light-gray);
+}
+
+body, input, button {
+  font-family: 'Lexend Deca', sans-serif;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100%;
+}
+
+.card-group {
+  display: flex;
+  margin: 5rem 3rem;
+  /* display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); */
+}
+
+.card {
+  padding: 4rem;
+  max-width: 28rem;
+}
+
+.card:nth-child(1) {
+  background: var(--orange);
+}
+
+.card:nth-child(2) {
+  background: var(--cyan);
+}
+
+.card:nth-child(3) {
+  background: var(--dark-cyan);
+}
+
+.card-image img {
+  width: 100%;
+  max-width: 6rem;
+  height: auto;
+}
+
+.card-title {
+  font-size: 3rem;
+  margin: 2rem 0;
+  text-transform: uppercase;
+  font-family: 'Big Shoulders Display', cursive;
+  color: var(--light-gray);
+}
+
+.card-text {
+  font-size: 1.5rem;
+  line-height: 2.5rem;
+  color: var(--text)
+}
+
+.card-button {
+  margin-top: 6rem;
+  font-size: 1.5rem;
+  background: var(--light-gray);
+  padding: 1.5rem;
+  width: 15rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5rem;
+  cursor: pointer;
+  border: 2px solid var(--light-gray);
+  transition: .2s;
+}
+
+.card-button:hover {
+  border: 2px solid var(--light-gray);
+  background: rgba(0,0,0,0);
+}
+
+.card:nth-child(1) .card-button {
+  color: var(--orange);
+}
+
+.card:nth-child(2) .card-button {
+  color: var(--cyan);
+}
+
+.card:nth-child(3) .card-button {
+  color: var(--dark-cyan);
+}
+
+.card:nth-child(1) .card-button:hover,
+.card:nth-child(2) .card-button:hover,
+.card:nth-child(3) .card-button:hover {
+  color: var(--text);
+}
+
+.card:nth-child(1) {
+  border-top-left-radius: .75rem;
+  border-bottom-left-radius: .75rem;
+}
+
+.card:nth-child(3) {
+  border-top-right-radius: .75rem;
+  border-bottom-right-radius: .75rem;
+}
+
+@media(max-width: 978px) {
+  .container {
+    height: 100%;
+  }
+
+  .card-group {
+    flex-direction: column;
+  }
+
+  .card:nth-child(1) {
+    border-top-left-radius: .75rem;
+    border-top-right-radius: .75rem;       
+    border-bottom-left-radius: 0;
+  }
+  
+  .card:nth-child(3) {
+    border-bottom-left-radius: .75rem;
+    border-bottom-right-radius: .75rem;       
+    border-top-right-radius: 0;
+  }
+}
