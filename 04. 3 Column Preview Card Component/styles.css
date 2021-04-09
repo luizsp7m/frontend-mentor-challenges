@@ -16,32 +16,26 @@ html {
   font-size: 62.5%;
 }
 
-body {
-  background: var(--light-gray);
-}
-
 body, input, button {
   font-family: 'Lexend Deca', sans-serif;
 }
 
-.container {
+body {
+  background: var(--light-gray);
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
-  width: 100%;
 }
 
 .card-group {
-  display: flex;
-  margin: 5rem 3rem;
-  /* display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); */
+  display: grid;
+  grid-template-columns: repeat(3, 28rem);
+  margin: 5rem;
 }
 
 .card {
   padding: 4rem;
-  max-width: 28rem;
 }
 
 .card:nth-child(1) {
@@ -124,13 +118,13 @@ body, input, button {
   border-bottom-right-radius: .75rem;
 }
 
-@media(max-width: 978px) {
-  .container {
-    height: 100%;
+@media(max-width: 1024px) {
+  body {
+    height: auto;
   }
 
   .card-group {
-    flex-direction: column;
+    grid-template-columns: 1fr;
   }
 
   .card:nth-child(1) {
