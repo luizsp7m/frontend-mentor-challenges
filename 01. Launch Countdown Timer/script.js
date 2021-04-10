@@ -3,7 +3,7 @@ var txtHours = document.getElementById('hours');
 var txtMinutes = document.getElementById('minutes');
 var txtSeconds = document.getElementById('seconds');
 
-var target = new Date("Jan 1, 2021 00:00:00").getTime();
+var target = new Date("Jan 1, 2022 00:00:00").getTime();
 
 var count = setInterval(() => {
   var now = new Date().getTime();
