@@ -1,142 +1,151 @@
-@import url('https://fonts.googleapis.com/css2?family=Red+Hat+Text:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap');
-
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+  box-sizing: 0;
+}
+
+:root {
+  --grayish-blue: hsl(237, 18%, 59%);
+  --soft-red: hsl(345, 95%, 68%);
+  --white: hsl(0, 0%, 100%);
+  --desaturated-blue: hsl(236, 21%, 26%);
+  --dark-blue: hsl(235, 16%, 14%);
+  --very-dark-blue: hsl(234, 17%, 12%);
 }
 
 html {
   font-size: 62.5%;
 }
 
-body {
-  background: #1e272e;
-  background-image: url(assets/bg-stars.svg);
-  background-position: center;
-  background-size: cover;
+body, input, button {
   font-family: 'Red Hat Text', sans-serif;
 }
 
-.container {
-  width: 100%;
-  margin: 8rem auto;
+body {
+  background-image: url(assets/bg-stars.svg), linear-gradient(var(--very-dark-blue), #241D2C);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
 }
 
-.row {
-  color: #fff;
-  text-align: center;
+.container {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(15fr, 80fr, 5fr);
+  min-height: 100vh;
+  background-image: url(assets/pattern-hills.svg);
+  background-repeat: no-repeat;
+  background-position: center bottom;
+  background-size: contain;
+}
+
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--white);
   text-transform: uppercase;
-  font-size: 1rem;
-  letter-spacing: .5rem;
-  padding: 0 1rem 0 1rem;
+  font-size: 3rem;
+  letter-spacing: 1rem;
+  text-align: center;
 }
 
 .main {
   display: flex;
   justify-content: center;
   align-items: center;
-
-  margin: 7rem 0;
+  gap: 2rem;
 }
 
-.card {
+.main > .card {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 0 3rem 0 3rem;
+  position: relative;
 }
 
-.number {
-  font-size: 5rem;
-  font-weight: bold;
-  color: #1e272e;
-  background: #f0f0f5;
+.card::before {
+  position: absolute;
+  content: "";
+  left: 0;
+  top: calc(50% - 26px);
+  height: 12px;
+  width: 6px;
+  background-color: var(--very-dark-blue);
+  z-index: 100;
+  border-radius: 0 15px 15px 0;
+}
 
-  border-radius: 5px;
-  
-  width: 10rem;
-  height: 10rem;
+.card::after {
+  position: absolute;
+  content: "";
+  right: 0;
+  top: calc(50% - 26px);
+  height: 12px;
+  width: 6px;
+  background-color: var(--very-dark-blue);
+  z-index: 100;
+  border-radius: 15px 0 0 15px;
+}
 
+.card > .card-body {
+  background: var(--desaturated-blue);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 6rem;
+  width: 12rem;
+  height: 12rem;
+  border-radius: .75rem;
+  color: var(--soft-red);
+  padding: 2rem;
+  font-weight: 700;
+  position: relative;
+}
+
+.card > .card-body::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 50%;
+  left: 0;
+  right: 0;
+  border-bottom-left-radius: .75rem;
+  border-bottom-right-radius: .75rem;
+  background-color: var(--very-dark-blue);
+  opacity: .2;
+}
+
+.card > .card-footer {
+  color: var(--grayish-blue);
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  letter-spacing: .35rem;
+  font-weight: 700;
+  margin-top: 2rem;
+}
+
+.footer {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.text {
-  margin-top: 1rem;
-  font-size: 1.2rem;
-  font-weight: bold;
-  color: #f0f0f5;
+.footer img {
+  width: 100%;
+  max-width: 3rem;
+  height: auto;
+  margin: 0 2rem;
+  transition: .3s;
 }
 
-.bottom {
-  position: fixed;
-  bottom: 0;
-  background: url(assets/pattern-hills.svg);
-  
-  background-size: cover;
-  width: 100vw;
-  height: 20vh;
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.bottom img {
+.footer img:hover {
   cursor: pointer;
-  margin: 0 2rem 0 2rem;
-}
-
-.bottom img:hover {
-  opacity: .85;
 }
 
 @media(max-width: 730px) {
-  html {
-    font-size: 50%;
-  }
-
-  .row {
-    font-size: 1.4rem;
-  }
-
-  .main { 
-    margin: 9rem 0;
-  }
-
-  .bottom {
-    background-position: center;
-  }
-
-  @media(max-width: 620px) {
-    html {
-      font-size: 40%;
-    }
-
-    .main { 
-      margin: 11rem 0;
-    }
-  }
-
-  @media(max-width: 440px) {
-    html {
-      font-size: 30%;
-    }
-
-    .main { 
-      margin: 13rem 0;
-    }
-  }
-
-  @media(max-width: 295px) {
-    html {
-      font-size: 20%;
-    }
-
-    .main { 
-      margin: 15rem 0;
-    }
+  .card > .card-body {
+    width: 5rem;
+    height: 5rem;
   }
 }

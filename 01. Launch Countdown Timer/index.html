@@ -1,45 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Red+Hat+Text:wght@700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
   <title>Countdown</title>
 </head>
+
 <body>
   <div class="container">
-    <div class="row">
-      <h1>We're launching soon</h1>
-    </div>
+    <div class="header">We're launching soon</div>
 
     <div class="main">
       <div class="card">
-        <div class="number" id="days"></div>
-        <div class="text">Days</div>
+        <div class="card-body" id="days">050</div>
+        <div class="card-footer">Days</div>
       </div>
 
       <div class="card">
-        <div class="number" id="hours"></div>
-        <div class="text">Hours</div>
+        <div class="card-body" id="hours">05</div>
+        <div class="card-footer">Hours</div>
       </div>
 
       <div class="card">
-        <div class="number" id="minutes"></div>
-        <div class="text">Minutes</div>
+        <div class="card-body" id="minutes">05</div>
+        <div class="card-footer">Minutes</div>
       </div>
 
       <div class="card">
-        <div class="number" id="seconds"></div>
-        <div class="text">Seconds</div>
+        <div class="card-body" id="seconds">05</div>
+        <div class="card-footer">Seconds</div>
       </div>
     </div>
 
-    <div class="bottom">
-      <img src="assets/icon-facebook.svg" />
-      <img src="assets/icon-pinterest.svg" />
-      <img src="assets/icon-instagram.svg" />
+    <div class="footer">
+      <img src="assets/icon-facebook.svg" alt="#">
+      <img src="assets/icon-pinterest.svg" alt="#">
+      <img src="assets/icon-instagram.svg" alt="#">
     </div>
   </div>
+
   <script src="script.js"></script>
 </body>
+
 </html>
