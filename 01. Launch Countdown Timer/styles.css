@@ -25,18 +25,17 @@ body {
   background-image: url(assets/bg-stars.svg), linear-gradient(var(--very-dark-blue), #241D2C);
   background-position: center;
   background-repeat: no-repeat;
-  background-size: contain;
+  background-size: cover;
 }
 
 .container {
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: repeat(15fr, 80fr, 5fr);
+  grid-template-rows: repeat(310fr, 40fr, 30fr);
   min-height: 100vh;
-  background-image: url(assets/pattern-hills.svg);
+  /* background-image: url(assets/pattern-hills.svg);
   background-repeat: no-repeat;
-  background-position: center bottom;
-  background-size: contain;
+  background-position: center bottom; */
 }
 
 .header {
@@ -54,7 +53,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 2rem;
+  gap: 1rem;
 }
 
 .main > .card {
@@ -68,9 +67,9 @@ body {
   position: absolute;
   content: "";
   left: 0;
-  top: calc(50% - 26px);
-  height: 12px;
-  width: 6px;
+  top: calc(50% - 20px);
+  height: 6px;
+  width: 3px;
   background-color: var(--very-dark-blue);
   z-index: 100;
   border-radius: 0 15px 15px 0;
@@ -80,9 +79,9 @@ body {
   position: absolute;
   content: "";
   right: 0;
-  top: calc(50% - 26px);
-  height: 12px;
-  width: 6px;
+  top: calc(50% - 20px);
+  height: 6px;
+  width: 3px;
   background-color: var(--very-dark-blue);
   z-index: 100;
   border-radius: 15px 0 0 15px;
@@ -93,14 +92,14 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 6rem;
-  width: 12rem;
-  height: 12rem;
+  font-size: 4.25rem;
   border-radius: .75rem;
   color: var(--soft-red);
-  padding: 2rem;
   font-weight: 700;
   position: relative;
+  height: 10.25rem;
+  width: 10.25rem;
+  box-shadow: 0px 6px 1px rgb(0 0 0 / 25%);
 }
 
 .card > .card-body::after {
@@ -118,7 +117,7 @@ body {
 
 .card > .card-footer {
   color: var(--grayish-blue);
-  font-size: 1.5rem;
+  font-size: 1rem;
   text-transform: uppercase;
   letter-spacing: .35rem;
   font-weight: 700;
@@ -129,11 +128,16 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+
+  background-image: url(assets/pattern-hills.svg);
+  background-position: center;
+  background-size: cover;
+  padding-top: 10rem;
 }
 
 .footer img {
   width: 100%;
-  max-width: 3rem;
+  max-width: 2.65rem;
   height: auto;
   margin: 0 2rem;
   transition: .3s;
@@ -143,9 +147,19 @@ body {
   cursor: pointer;
 }
 
-@media(max-width: 730px) {
+@media(max-width: 460px) {
+  html {
+    font-size: 50%;
+  }
+
   .card > .card-body {
-    width: 5rem;
-    height: 5rem;
+    height: 8rem;
+    width: 8rem;
+    font-size: 4rem;
+  }
+
+  .header, .footer {
+    align-items: flex-end;
+    padding-bottom: 3rem;
   }
 }
