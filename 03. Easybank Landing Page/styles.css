@@ -32,6 +32,7 @@ input, button {
 
 .navbar {
   background: var(--white);
+  z-index: 1000;
 }
 
 .navbar .container {
@@ -81,21 +82,23 @@ input, button {
   font-size: 1.4rem;
   font-weight: 700;
   color: var(--white);
-  background: var(--lime-green);
-  padding: 1.35rem 4.3rem;
+  background-image: linear-gradient(to right, var(--lime-green), var(--bright-cyan));
+  padding: 1.5rem 4.3rem;
   border-radius: 3rem;
   cursor: pointer;
-  transition: background .3s;
+  transition: opacity .3s;
 }
 
 .navbar .container button:hover {
-  background: var(--bright-cyan);
+  opacity: .65;
 }
 
 /* =================================== */
 
 .hero {
-  background: #007fff;
+  background-image: url(assets/bg-intro-desktop.svg);
+  background-position: 750% center;
+  background-repeat: no-repeat;
   height: calc(100vh - 73px);
 }
 
@@ -103,14 +106,54 @@ input, button {
   display: flex;
   justify-content: space-around;
   align-items: center;
+
+  width: 95%;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .hero .container .left {
-  background: red;
+  
+}
+
+.hero .container .left h1 {
+  font-size: 5rem;
+  max-width: 50rem;
+  color: var(--dark-blue);
+  font-weight: 500;
+}
+
+.hero .container .left p {
+  max-width: 50rem;
+  color: var(--grayish-blue);
+  font-size: 2rem;
+  line-height: 2.5rem;
+  margin: 3rem 0;
+}
+
+.hero .container .left button {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--white);
+  background-image: linear-gradient(to right, var(--lime-green), var(--bright-cyan));
+  padding: 1.5rem 4.3rem;
+  border-radius: 3rem;
+  cursor: pointer;
+  transition: opacity .3s;
+}
+
+.hero .container button:hover {
+  opacity: .65;
 }
 
 .hero .container .right {
-  
+
+}
+
+.hero .container .right img {
+  width: 100%;
+  max-width: 60rem;
+  position: relative;
 }
 
 /* =================================== */
@@ -305,15 +348,15 @@ input, button {
   font-size: 1.4rem;
   font-weight: 700;
   color: var(--white);
-  background: var(--lime-green);
-  padding: 1.35rem 4.3rem;
+  background-image: linear-gradient(to right, var(--lime-green), var(--bright-cyan));
+  padding: 1.5rem 4.3rem;
   border-radius: 3rem;
   cursor: pointer;
-  transition: background .3s;
+  transition: opacity .3s;
 }
 
 .footer .right button:hover {
-  background: var(--bright-cyan);
+  opacity: .65;
 }
 
 .footer .right span {
@@ -322,20 +365,49 @@ input, button {
 }
 
 @media(max-width: 980px) {
+  .hero {
+    height: auto;
+    background-image: url(assets/bg-intro-mobile.svg);
+    background-size: contain;
+    background-position: right top;
+  }
+
+  .hero .container {
+    flex-direction: column;
+    padding: 3rem 0;
+  }
+
+  .hero .container .left {
+    order: 2;
+    text-align: center;
+  }
+
+  .hero .container .left button {
+    margin: 0 auto;
+  }
+
+  .hero .container .right img {
+    max-width: 30rem;
+  }
+  
   .section .row {
     text-align: center;
   }
+
   .benefits .card {
     text-align: center;
   }
+
   .benefits {
     grid-template-columns: 1fr 1fr;
     gap: 4rem 2rem;
   }
+
   .articles {
     grid-template-columns: 1fr 1fr;
     gap: 3rem 1rem;
   }
+
   .latest .title {
     text-align: center;
   }
@@ -395,6 +467,7 @@ input, button {
   html {
     font-size: 50%;
   }
+  
   .section .benefits, .latest .articles {
     grid-template-columns: 1fr;
   }
