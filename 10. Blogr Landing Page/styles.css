@@ -1,0 +1,141 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body, input, button {
+  font-family: 'Overpass', sans-serif;
+  /* font-family: 'Ubuntu', sans-serif; */
+}
+
+.header {
+  background: url('./images/bg-pattern-intro.svg') no-repeat left top, linear-gradient(to right, #FF8D70, #FF485A);
+  background-size: 100%;
+  background-position: center left;
+  min-height: 100vh;
+}
+
+.navbar .container {
+  width: 90%;
+  max-width: 110rem;
+  margin: 0 auto;
+
+  display: flex;
+  align-items: center;
+  padding: 3rem 0;
+
+  font-family: 'Ubuntu', sans-serif;
+}
+
+.navbar .logo {
+  color: hsl(0, 0%, 100%);
+  font-weight: 700;
+  font-size: 4rem;
+}
+
+.navbar-nav {
+  display: flex;
+  align-items: center;
+
+  width: 100%;
+  margin-left: 4rem;
+
+  display: flex;
+  justify-content: space-between;
+}
+
+.navbar-nav ul {
+  list-style: none;
+}
+
+.navbar-nav ul li {
+  display: inline-block;
+  margin: 0 2rem;
+  cursor: pointer;
+  position: relative;
+}
+
+.navbar-nav ul li a {
+  text-decoration: 0;
+  color: hsl(0, 0%, 100%);
+  font-size: 1.6rem;
+  font-weight: 500;
+  margin-right: .5rem;
+}
+
+.navbar-nav ul li a:hover {
+  text-decoration: underline;
+}
+
+.navbar-nav ul li img {
+ transition: .5s; 
+}
+
+.navbar-nav ul li:hover img {
+  transform: rotate(180deg);
+}
+
+/* Start Drop */
+.navbar-nav ul li:hover ul.dropdown {
+ display: block;
+}
+
+.navbar-nav ul li ul.dropdown {
+  display: none;
+  background: red;
+  position: absolute;
+  background: hsl(0, 0%, 100%);
+  border-radius: .5rem;
+  width: 15rem;
+  padding: 1rem 0;
+  margin-left: -1rem;
+}
+
+.navbar-nav ul li ul.dropdown li {
+  display: block;
+  padding: .5rem 0;
+}
+
+.navbar-nav ul li ul.dropdown li a {
+  color: hsl(237, 17%, 21%);
+  font-weight: 300;
+}
+
+.navbar-nav ul li ul.dropdown li a:hover {
+  font-weight: 600;
+  text-decoration: none;
+}
+/* End Drop */
+
+.navbar-nav .button-group button {
+  font-family: 'Ubuntu', sans-serif;
+  font-weight: 500;
+  font-size: 1.6rem;
+  padding: 1.45rem 4rem;
+  font-weight: 700;
+  border-radius: 5rem;
+  background: 0;
+  border: 0;
+  outline: 0;
+  cursor: pointer;
+  transition: .25s;
+}
+
+.navbar-nav .button-group button.signup {
+  background: hsl(0, 0%, 100%);
+  color: hsl(353, 100%, 62%)
+}
+
+.navbar-nav .button-group button.signup:hover {
+  background: hsl(355, 100%, 74%);
+  color: hsl(0, 0%, 100%);
+}
+
+.navbar-nav .button-group button.login {
+  color: hsl(0, 0%, 100%);
+}
