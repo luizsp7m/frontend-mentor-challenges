@@ -114,6 +114,7 @@ body {
 
 #intro .bookmark-content:hover {
   opacity: .85;
+  cursor: pointer;
 }
 
 #intro .bookmark-icon {
@@ -291,7 +292,7 @@ body {
   height: 100%;
   background: rgba(0,0,0,.5);
 
-  display: flex;
+  display: none; 
   justify-content: center;
   align-items: center;
 }
@@ -329,35 +330,46 @@ body {
   margin-bottom: 2.5rem;
 }
 
+#modal .card-wrapper {
+  margin: 3rem 0 0 0;
+  border: 1px solid rgba(0,0,0,.1);
+  border-radius: .75rem;
+  transition: .25s;
+}
+
+#modal .card-wrapper:hover {
+  border-color: hsl(176, 50%, 47%);
+  cursor: pointer;
+}
+
 #modal .card {
   display: flex;
   align-items: flex-start;
   justify-content: flex-start;
-  gap: 1.5rem;
+  gap: 3rem;
   padding: 3rem;
-  margin: 2rem 0;
-  border: 1px solid rgba(0,0,0,.1);
-  border-radius: .5rem;
 }
 
 #modal .card-input {
+  padding: .35rem;
+  border: 1px solid rgba(0, 0, 0, .2);
+  border-radius: 50%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 #modal .checkbox {
-  height: 2.3rem;
-  width: 2.3rem;
+  height: 1.5rem;
+  width: 1.5rem;
   border-radius: 50%;
-  border: 1px solid rgba(0, 0, 0, .2);
   cursor: pointer;
   transition: .25s;
 }
 
-#modal .checkbox:hover {
-  border: 1px solid rgba(0, 0, 0, .3);
-}
-
 #modal .card-body {
-
+  
 }
 
 #modal .card-row {
@@ -373,7 +385,7 @@ body {
 
 #modal .card-title {
   font-size: 1.75rem;
-  font-weight: 500;
+  font-weight: 700;
   margin-right: 2rem;
   transition: color .25s;
   cursor: pointer;
@@ -419,9 +431,10 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-top: 2rem;
-  padding-top: 2rem;
+  padding: 2rem 3rem;
   border-top: 1px solid rgba(0,0,0,.1);
+
+  display: none;
 }
 
 #modal .booking-text {
@@ -454,6 +467,77 @@ body {
   border: 0;
   outline: 0;
   padding: 1rem 2rem;
+  transition: background .25s;
+  cursor: pointer;
+}
+
+#modal .booking-button-group button:hover {
+  background: hsl(176, 72%, 28%);
+}
+
+#success {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,.5);
+
+  display: none; 
+  justify-content: center;
+  align-items: center;
+}
+
+#success .success-container {
+  padding: 5rem;
+  background: #fafafa;
+  border-radius: .5rem;
+  overflow: auto;
+  position: relative;
+  width: 90%;
+  max-width: 525px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#success .success-container img {
+  max-width: 7rem;
+  height: auto;
+  margin-bottom: 3rem;
+}
+
+#success .success-container h1 {
+  font-size: 2rem;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+#success .success-container p {
+  font-size: 1.55rem;
+  color: hsl(0, 0%, 48%);
+  line-height: 2.9rem;
+  margin-bottom: 2.5rem;
+  text-align: center;
+}
+
+#success .success-container button {
+  background: hsl(176, 50%, 47%);
+    border: 0;
+    outline: 0;
+    padding: 1.5rem 4rem;
+    border-radius: 10rem;
+    color: #fafafa;
+    font-size: 1.45rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background .25s;
+}
+
+#success .success-container button:hover {
+  background: hsl(176, 72%, 28%);
 }
 /* ------------------------------------------------ */
 
@@ -564,6 +648,18 @@ body {
   #modal .card-bottom span {
     font-size: 1.45rem;
     color: hsl(0, 0%, 48%);
+  }
+
+  #modal .card-booking {
+    flex-direction: column;
+  }
+
+  #modal .booking-text {
+    margin-bottom: 1.5rem;
+  }
+
+  #modal .booking-button-group input {
+    width: 100%;
   }
 }
 
