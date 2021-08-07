@@ -16,26 +16,35 @@
   <div class="wrapper">
     <div class="left-side">
       <div class="top">
-        <span>Bill</span>
-        <input type="number" />
+        <div class="row">
+          <span>Bill</span>
+          <span class="error" id="errorBill"></span>
+        </div>
+        <input type="number" id="inputBill" />
       </div>
 
       <div class="middle">
-        <span>Select Tip %</span>
+        <div class="row">
+          <span>Select Tip %</span>
+          <span class="error" id="errorTip"></span>
+        </div>
 
         <div class="tip-selection">
-          <div class="tip-value">5%</div>
-          <div class="tip-value">10%</div>
-          <div class="tip-value">15%</div>
-          <div class="tip-value">25%</div>
-          <div class="tip-value">50%</div>
-          <div class="tip-value">Custom</div>
+          <div class="tip-value" onclick="selectTip(5, this)">5%</div>
+          <div class="tip-value" onclick="selectTip(10, this)">10%</div>
+          <div class="tip-value" onclick="selectTip(15, this)">15%</div>
+          <div class="tip-value" onclick="selectTip(25, this)">25%</div>
+          <div class="tip-value" onclick="selectTip(50, this)">50%</div>
+          <input type="number" placeholder="Custom" id="inputCustomTip" onchange="selectCustomTip()" />
         </div>
       </div>
 
       <div class="bottom">
-        <span>Number of People</span>
-        <input type="number" />
+        <div class="row">
+          <span>Number of People</span>
+          <span class="error" id="errorNumberPeople"></span>
+        </div>
+        <input type="number" id="inputNumberPeople" />
       </div>
     </div>
 
@@ -47,7 +56,7 @@
             <label>/ person</label>
           </div>
 
-          <h3>$4.27</h3>
+          <h3 id="resultTipAmount">$0.00</h3>
         </div>
 
         <div class="row">
@@ -56,15 +65,22 @@
             <label>/ person</label>
           </div>
 
-          <h3>$32.79</h3>
+          <h3 id="resultTotal">$0.00</h3>
         </div>
       </div>
 
       <div class="bottom">
-        <button>Reset</button>
+        <button onclick="calculate()">Calculate</button>
       </div>
     </div>
   </div>
+
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+    Coded by <a href="https://github.com/luizsp7m" target="_blank">Luiz</a>.
+  </div>
+
+  <script src="script.js"></script>
 </body>
 
 </html>

@@ -20,6 +20,9 @@ body, input, button {
   justify-content: center;
   align-items: center;
 
+  flex-direction: column;
+  gap: 2rem;
+
   padding: 3rem;
 }
 
@@ -46,6 +49,12 @@ body, input, button {
   font-weight: 700;
 }
 
+.left-side span.error {
+  color: #e74c3c;
+  font-size: 1.8rem;
+  font-weight: 700;
+}
+
 .left-side input {
   background-color: #C5E4E7;
   border: 0;
@@ -66,9 +75,15 @@ body, input, button {
   gap: 1rem;
 }
 
+.left-side .row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
 .left-side .middle .tip-selection {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(3, 33.33%);
   gap: 1rem;
 }
 
@@ -156,7 +171,17 @@ body, input, button {
   background-color: #C5E4E7;
 }
 
-@media(max-width: 950px) {
+.attribution {
+  font-size: 1.25rem;
+  color: #6C8081;
+}
+
+.attribution a {
+  color: #00494D;
+  font-weight: bold;
+}
+
+/* @media(max-width: 950px) {
   html {
     font-size: 56.25%;
   }
@@ -169,9 +194,17 @@ body, input, button {
     font-size: 3rem;
     color: #26C2AD;
   }
-}
+} */
 
-@media(max-width: 730px) {
+@media(max-width: 950px) {
+  html {
+    font-size: 50%;
+  }
+
+  #container {
+
+  }
+  
   .wrapper {
     grid-template-columns: 1fr;
   }
@@ -183,5 +216,11 @@ body, input, button {
   .right-side h3 {
     font-size: 2rem;
     color: #26C2AD;
+  }
+}
+
+@media(max-width: 440px) {
+  html {
+    font-size: 40%;
   }
 }

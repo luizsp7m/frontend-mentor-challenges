@@ -12,5 +12,3 @@
 07. Stats Preview Card Component - [Site URL](https://sleepy-khorana-57a258.netlify.app/)
 08. Testimonials Grid Section - [Site URL](https://zen-leavitt-c9841e.netlify.app/)
 09. Sunnyside Agency Landing Page - [Site URL](https://happy-visvesvaraya-d3a6f5.netlify.app/)
-
-Testando Commit
