@@ -14,10 +14,15 @@ body, input, button {
 
 body {
 	background: #DFE8FF;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding: 2rem;
+	gap: 2rem;
 }
 
 .container {
-	min-height: 100vh;
+	/* min-height: 100vh; */
 	background-image: url(images/pattern-background-desktop.svg);
 	background-position: right center;
 	background-size: cover;
@@ -123,7 +128,7 @@ body {
 	outline: 0;
 	font-weight: 700;
 	cursor: pointer;
-	transition: background .25s;
+	transition: all .25s;
 }
 
 .card-bottom .payment {
@@ -142,6 +147,16 @@ body {
 
 .card-bottom .cancel:hover {
 	color: hsl(223, 47%, 23%);
+}
+
+.attribution {
+  font-size: 1.25rem;
+  color: #6C8081;
+}
+
+.attribution a {
+  color: hsl(245, 75%, 52%);;
+  font-weight: bold;
 }
 
 @media (max-width: 485px) {
