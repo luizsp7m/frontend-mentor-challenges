@@ -1,0 +1,166 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+html {
+	font-size: 62.5%;
+}
+
+body, input, button {
+	font-family: 'Red Hat Display', sans-serif;
+}
+
+body {
+	background: #DFE8FF;
+}
+
+.container {
+	min-height: 100vh;
+	background-image: url(images/pattern-background-desktop.svg);
+	background-position: right center;
+	background-size: cover;
+
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.card {
+	background: #fafafa;
+	border-radius: 1.25rem;
+	box-shadow: 5px 5px 35px rgba(0, 0, 0, .25);
+}
+
+.card-image img {
+	border-radius: 1.25rem 1.25rem 0 0;
+	width: 100%;
+	height: auto;
+}
+
+.card-body {
+	padding: 3rem 0;
+	text-align: center;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.card-title {
+	font-size: 2.25rem;
+	font-weight: 900;
+	color: #1E2D4B;
+}
+
+.card-text {
+	margin: 1.25rem 0;
+	font-size: 1.45rem;
+	color: hsl(224, 23%, 55%);
+	max-width: 270px;
+	line-height: 2.45rem;
+}
+
+.card-plan {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 1rem;
+	background-color: hsl(225, 100%, 98%);
+	width: 80%;
+	padding: 1rem;
+	border-radius: .5rem;
+}
+
+.card-plan-left {
+	display: flex;
+	align-items: center;
+	gap: 1.45rem;
+}
+
+.card-plan-left div {
+	display: flex;
+	flex-direction: column;
+	gap: .7rem;
+}
+
+.card-plan-left h5 {
+	color: #1E2D4B;
+	font-weight: 900;
+	font-size: 1.55rem;
+}
+
+.card-plan-left span {
+	font-size: 1.40rem;
+	color: hsl(224, 23%, 55%);
+}
+
+.card-plan a {
+	font-size: 1.55rem;
+	color: hsl(245, 75%, 52%);
+	font-weight: 700;
+	transition: .25s;
+}
+
+.card-plan a:hover {
+	color: #766CF1;
+}
+
+.card-bottom {
+	padding: 0 0 3rem 0;
+	display: flex;
+	flex-direction: column;
+	width: 80%;
+	margin: 0 auto;
+	gap: 1rem;
+}
+
+.card-bottom button {
+	font-size: 1.40rem;
+	padding: 1.8rem;
+	border-radius: 1rem;
+	border: 0;
+	outline: 0;
+	font-weight: 700;
+	cursor: pointer;
+	transition: background .25s;
+}
+
+.card-bottom .payment {
+	background: hsl(245, 75%, 52%);
+	color: #fafafa;
+}
+
+.card-bottom .payment:hover {
+	background: #766CF1;
+}
+
+.card-bottom .cancel {
+	background: none;
+	color: hsl(224, 23%, 55%);
+}
+
+.card-bottom .cancel:hover {
+	color: hsl(223, 47%, 23%);
+}
+
+@media (max-width: 485px) {
+	html {
+		font-size: 56.25%;
+	}
+
+	.container {
+		padding: 0 3rem;
+	}
+
+	.card-image img {
+		border-radius: 1.25rem 1.25rem 0 0;
+		height: auto;
+	}
+}
+
+@media (max-width: 360px) {
+	html {
+		font-size: 50%;
+	}
+}
