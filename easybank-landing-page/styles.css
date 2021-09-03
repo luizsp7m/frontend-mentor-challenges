@@ -99,9 +99,10 @@ input, button {
 
 .hero {
   background-image: url(assets/bg-intro-desktop.svg);
-  background-position: 750% center;
-  background-repeat: no-repeat;
   height: calc(100vh - 73px);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: right -50rem center;
 }
 
 .hero .container {
