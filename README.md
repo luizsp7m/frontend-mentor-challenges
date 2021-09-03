@@ -14,3 +14,4 @@
 - Sunnyside Agency Landing Page - [Site URL](https://happy-visvesvaraya-d3a6f5.netlify.app/)
 - Tip Calculator App - [Site URL](https://awesome-hodgkin-62c9b6.netlify.app/)
 - Order Summary Component - [Site URL](https://frosty-albattani-f494a0.netlify.app/)
+- Easybank Landing Page - [Site URL](https://relaxed-haibt-3fc628.netlify.app/)
