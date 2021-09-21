@@ -1,0 +1,144 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+input, button, body {
+  font-family: 'Rubik', sans-serif;
+}
+
+.wrapper {
+  min-height: 100vh;
+  background-color: #0D1323;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.grid {
+  max-width: 1440px;
+  width: 90%;
+  display: grid;
+  grid-template-rows: repeat(2, 1fr);
+  grid-template-columns: repeat(4, 225px);
+  grid-template-areas: "profile work play study" "profile exercise social care";
+  gap: 2rem;
+  justify-content: center;
+}
+
+.grid > div {
+  background: #1D204B;
+  border-radius: 1rem;
+}
+
+.top {
+  height: 5rem;
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.top > img {
+  position: absolute;
+  right: .5rem;
+  top: -1rem;
+  max-width: 5rem;
+  height: auto;
+}
+
+.profile {
+
+}
+
+.profile-information {
+  padding: 3rem;
+  display: flex;
+  flex-direction: column;
+  background: #5746EA;
+  border-radius: 1rem;
+}
+
+.profile-information img {
+  width: 100%;
+  max-width: 6rem;
+  height: auto;
+  border: 2px solid #fafafa;
+  border-radius: 50%;
+  margin-bottom: 3rem;
+}
+
+.profile-information span {
+  color: #fafafa;
+  font-size: 1.5rem;
+  opacity: .95;
+  font-weight: 300;
+  margin-bottom: 1rem;
+}
+
+.profile-information h1 {
+  color: #fafafa;
+  font-weight: 300;
+  font-size: 3rem;
+}
+
+.navigation {
+  display: flex;
+  flex-direction: column;
+  gap: 1.45rem;
+  padding: 2rem 3rem;
+}
+
+.navigation h5 {
+  color: rgba(255, 255, 255, .7);
+  font-size: 1.35rem;
+  font-weight: 400;
+  cursor: pointer;
+  transition: color .25s;
+}
+
+.navigation h5:hover {
+  color: #fafafa;
+}
+
+.body {
+  border-radius: 1rem;
+  padding: 2rem;
+}
+
+.body .row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.body .row h5 {
+  color: #fafafa;
+  font-weight: 500;
+  font-size: 1.35rem;
+}
+
+.body .row img {
+  max-width: 1.5rem;
+  width: 100%;
+  height: auto;
+  cursor: pointer;
+}
+
+.body h1 {
+  color: #fafafa;
+  font-weight: 300;
+  font-size: 4rem;
+  margin-bottom: 1rem;
+}
+
+.body span {
+  font-size: 1.35rem;
+  color: rgba(255, 255, 255, .7);
+}
