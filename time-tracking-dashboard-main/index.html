@@ -8,6 +8,7 @@
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
   <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
+  <script src="script.js"></script>
   <title>Frontend Mentor | Time tracking dashboard</title>
 </head>
 
@@ -22,111 +23,9 @@
         </div>
 
         <div class="navigation">
-          <h5>Daily</h5>
-          <h5>Weekly</h5>
-          <h5>Monthly</h5>
-        </div>
-      </div>
-
-      <div class="work">
-        <div class="top" style="background: #FF8B64;">
-          <img src="images/icon-work.svg" alt="Icon">
-        </div>
-
-        <div class="body">
-          <div class="row">
-            <h5>Work</h5>
-            <img src="images/icon-ellipsis.svg" alt="Icon">
-          </div>
-
-          <h1>32hrs</h1>
-
-          <span>Last Week - 36hrs</span>
-        </div>
-      </div>
-
-      <div class="play">
-        <div class="top" style="background: #56C2E6;">
-          <img src="images/icon-play.svg" alt="Icon">
-        </div>
-
-        <div class="body">
-          <div class="row">
-            <h5>Work</h5>
-            <img src="images/icon-ellipsis.svg" alt="Icon">
-          </div>
-
-          <h1>32hrs</h1>
-
-          <span>Last Week - 36hrs</span>
-        </div>
-      </div>
-
-      <div class="study">
-        <div class="top" style="background: #FF5D7D;">
-          <img src="images/icon-study.svg" alt="Icon">
-        </div>
-
-        <div class="body">
-          <div class="row">
-            <h5>Work</h5>
-            <img src="images/icon-ellipsis.svg" alt="Icon">
-          </div>
-
-          <h1>32hrs</h1>
-
-          <span>Last Week - 36hrs</span>
-        </div>
-      </div>
-
-      <div class="exercise">
-        <div class="top" style="background: #4BCF83;">
-          <img src="images/icon-exercise.svg" alt="Icon">
-        </div>
-
-        <div class="body">
-          <div class="row">
-            <h5>Work</h5>
-            <img src="images/icon-ellipsis.svg" alt="Icon">
-          </div>
-
-          <h1>32hrs</h1>
-
-          <span>Last Week - 36hrs</span>
-        </div>
-      </div>
-
-      <div class="social">
-        <div class="top" style="background: #7235D1;">
-          <img src="images/icon-social.svg" alt="Icon">
-        </div>
-
-        <div class="body">
-          <div class="row">
-            <h5>Work</h5>
-            <img src="images/icon-ellipsis.svg" alt="Icon">
-          </div>
-
-          <h1>32hrs</h1>
-
-          <span>Last Week - 36hrs</span>
-        </div>
-      </div>
-
-      <div class="care">
-        <div class="top" style="background: #F1C65B;">
-          <img src="images/icon-self-care.svg" alt="Icon">
-        </div>
-
-        <div class="body">
-          <div class="row">
-            <h5>Work</h5>
-            <img src="images/icon-ellipsis.svg" alt="Icon">
-          </div>
-          
-          <h1>32hrs</h1>
-
-          <span>Last Week - 36hrs</span>
+          <h5 onclick="toggleFilter('daily', this)">Daily</h5>
+          <h5 onclick="toggleFilter('weekly', this)"  class="selected">Weekly</h5>
+          <h5 onclick="toggleFilter('monthly', this)">Monthly</h5>
         </div>
       </div>
     </div>
