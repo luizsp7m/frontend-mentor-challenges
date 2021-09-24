@@ -26,11 +26,12 @@ async function getData() {
   const result = await fetch("data.json");
   const data = await result.json();
 
-  const grid = document.querySelector(".grid");
+  const grid = document.querySelector(".grid-content");
 
   data.map(item => {
     const wrapper = document.createElement("div");
     wrapper.classList.add('wrapper-data');
+    wrapper.style.background = item.background;
     
     const top = document.createElement("div");
     top.classList.add("top");
@@ -59,13 +60,17 @@ async function getData() {
     ellipsis.alt = "Icon";
     row.appendChild(ellipsis);
 
+    const row2 = document.createElement("div");
+    row2.classList.add("row2");
+    body.appendChild(row2);
+
     const h1 = document.createElement("h1");
     h1.innerHTML =  `${filter === 'daily' ? item.timeframes.daily.current : filter === 'weekly' ? item.timeframes.weekly.current : item.timeframes.monthly.current }hrs`;
-    body.appendChild(h1);
+    row2.appendChild(h1);
 
     const span = document.createElement("span");
     span.innerHTML =  `Last Week - ${filter === 'daily' ? item.timeframes.daily.previous : filter === 'weekly' ? item.timeframes.weekly.previous : item.timeframes.monthly.previous }hrs`;
-    body.appendChild(span);
+    row2.appendChild(span);
 
     grid.appendChild(wrapper);
   });

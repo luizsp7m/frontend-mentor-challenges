@@ -16,30 +16,29 @@ input, button, body {
   min-height: 100vh;
   background-color: #0D1323;
   display: flex;
+  flex-direction: column;
+  gap: 2rem;
   align-items: center;
   justify-content: center;
+  padding: 1rem;
 }
 
-.grid {
-  max-width: 1440px;
+.content {
   width: 90%;
+  max-width: 1360px;
   display: grid;
-  grid-template-columns: repeat(4, 1fr) ;
-  grid-template-rows: repeat(2, 1fr);
-  grid-template-areas: "profile . . ." "profile . . .";
-  gap: 2rem;
-  justify-content: center;
-  transition: .25s;
+  grid-template-columns: 1fr 3fr;
+  gap: 1rem;
 }
 
-.grid > div {
-  background: #1D204B;
-  border-radius: 1rem;
-  transition: .25s;
+.grid-content {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
 }
 
 .top {
-  height: 5rem;
+  height: 6.5rem;
   border-top-left-radius: 1rem;
   border-top-right-radius: 1rem;
   position: relative;
@@ -49,13 +48,17 @@ input, button, body {
 .top > img {
   position: absolute;
   right: .5rem;
-  top: -1rem;
+  top: -.5rem;
   max-width: 5rem;
   height: auto;
 }
 
 .profile {
-
+  background: #1D204B;
+  border-radius: 1rem;
+  transition: .25s;
+  display: flex;
+  flex-direction: column;
 }
 
 .profile-information {
@@ -94,6 +97,8 @@ input, button, body {
   flex-direction: column;
   gap: 1.45rem;
   padding: 2rem 3rem;
+  height: 100%;
+  justify-content: center;
 }
 
 .navigation .selected {
@@ -112,9 +117,21 @@ input, button, body {
   color: #fafafa;
 }
 
+.wrapper-data {
+  border-radius: 2rem;
+}
+
 .body {
   border-radius: 1rem;
   padding: 2rem;
+  background: #1D204B;
+  transition: background .25s;
+  cursor: pointer;
+  position: relative;
+}
+
+.body:hover {
+  background: #34397B;
 }
 
 .body .row {
@@ -135,6 +152,11 @@ input, button, body {
   width: 100%;
   height: auto;
   cursor: pointer;
+  opacity: .85;
+}
+
+.body .row img:hover {
+  opacity: 1;
 }
 
 .body h1 {
@@ -149,26 +171,57 @@ input, button, body {
   color: rgba(255, 255, 255, .7);
 }
 
-@media(max-width: 998px) {
-  .grid {
-    grid-template-columns: repeat(3, 1fr) ;
-    grid-template-rows: repeat(3, 1fr);
-    grid-template-areas: "profile . ." "profile . ." "profile . .";
+.attribution {
+  color: #fafafa;
+  font-size: 1.35rem;
+}
+
+.attribution a {
+  color: #5746EA;
+}
+
+@media(max-width: 768px) {
+  .content {
+    grid-template-columns: 1fr;
+  }
+  
+  .grid-content {
+    grid-template-columns: 1fr 1fr;
   }
 }
 
-/* @media(max-width: 575px) {
-  .grid {
-    grid-template-columns: repeat(2, 1fr) ;
-    grid-template-rows: repeat(6, 1fr);
-    grid-template-areas: "profile ." "profile ." "profile ." "profile ." "profile ." "profile .";
+@media(max-width: 475px) {  
+  html {
+    font-size: 50%;
   }
-} */
 
-@media(max-width: 575px) {
-  .grid {
+  .grid-content {
     grid-template-columns: 1fr;
-    grid-template-rows: repeat(7, 1fr);
-    grid-template-areas: "profile" "." "." "." "." "." ".";
+  }
+
+  .navigation {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .profile-information {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  .profile-information img {
+    margin: 0;
+  }
+
+  .profile-information br {
+    display: none;
+  }
+
+  .row2 {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
   }
 }

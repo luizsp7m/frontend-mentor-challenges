@@ -14,27 +14,33 @@
 
 <body>
   <div class="wrapper">
-    <div class="grid">
-      <div class="profile" style="grid-area: profile;">
+    <div class="content">
+      <div class="profile">
         <div class="profile-information">
           <img src="images/image-jeremy.png" alt="Profile Image">
-          <span>Report for</span>
-          <h1>Jeremy <br /> Robson</h1>
+          <div>
+            <span>Report for</span>
+            <h1>Jeremy <br /> Robson</h1>
+          </div>
         </div>
 
         <div class="navigation">
           <h5 onclick="toggleFilter('daily', this)">Daily</h5>
-          <h5 onclick="toggleFilter('weekly', this)"  class="selected">Weekly</h5>
+          <h5 onclick="toggleFilter('weekly', this)" class="selected">Weekly</h5>
           <h5 onclick="toggleFilter('monthly', this)">Monthly</h5>
         </div>
       </div>
+
+      <div class="grid-content">
+
+      </div>
+    </div>
+
+    <div class="attribution">
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+      Coded by <a href="https://github.com/luizsp7m" target="_blank">Luiz</a>.
     </div>
   </div>
-
-  <!-- <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div> -->
 </body>
 
 </html>
