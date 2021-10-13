@@ -1,3 +1,15 @@
+<div align=center>
+   <img width="350" src="https://www.frontendmentor.io/static/images/logo-desktop.svg" alt="Frontendmentor" />
+</div>
+
+<h4 align=center>This repository contains some challenges from <a href="https://www.frontendmentor.io/home">Frontend Mentor</a></h4>
+
+<h5 align="center">
+  <a href="https://www.frontendmentor.io/profile/luizsp7m">My Profile</a>
+</h5>
+
+---
+
 <p align=center>
   <a href="https://3-column-preview-card-component-zeta-plum.vercel.app/"><img width="250" src="./3-column-preview-card-component/design/desktop-preview.jpg"></a>
   <a href="https://nifty-kalam-677ad1.netlify.app/"><img width="250" src="./crowdfunding-product-page/design/desktop-preview.jpg"></a>
