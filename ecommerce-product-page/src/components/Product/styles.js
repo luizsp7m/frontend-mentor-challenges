@@ -33,6 +33,12 @@ export const ProductImage = styled.div`
     cursor: pointer;
     outline: none;
 
+    transition: opacity .25s;
+
+    &:hover {
+      opacity: .75;
+    }
+
     display: ${({ displayButton }) => displayButton ? 'block' : 'none'};
 
     > img {

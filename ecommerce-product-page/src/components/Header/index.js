@@ -6,9 +6,8 @@ import { Container } from "./styles";
 
 export default function Header() {
 
-  const [openMenu, setOpenMenu] = useState(false);
-
   const [openCart, setOpenCart] = useState(false);
+  const [openMenu, setOpenMenu] = useState(false);
 
   const { amount, productInCart, setProductInCart, setAmount } = useApp();
 

@@ -1,9 +1,11 @@
-import { useEffect, useState } from "react";
+import {  useState } from "react";
+
 import Modal from "../Modal";
 
 import { Container, ProductImage, Gallery } from "./styles";
 
 export default function Product() {
+
   const images = [{
     id: 0, url: "/images/image-product-1.jpg",
   }, {
@@ -50,7 +52,7 @@ export default function Product() {
             <img src="/images/icon-close.svg" alt="Close" />
           </button>
 
-          <ProductImage displayButton={true} modalIsOpen={modalOpen}>
+          <ProductImage data-aos="zoom-in" displayButton={true} modalIsOpen={modalOpen}>
             <button className="previous" onClick={() => Carousel('previous')}>
               <img src="/images/icon-previous.svg" alt="Previous" />
             </button>
@@ -62,7 +64,7 @@ export default function Product() {
             </button>
           </ProductImage>
 
-          <Gallery>
+          <Gallery data-aos="zoom-in">
             {images.map((image, index) => <img
               src={image.url}
               alt="Product"
@@ -74,7 +76,7 @@ export default function Product() {
         </Modal>
       )}
 
-      <ProductImage displayButton={false} onClick={getWindowDimensions}>
+      <ProductImage data-aos="fade-right" displayButton={false} onClick={getWindowDimensions}>
         <button className="previous" onClick={() => Carousel('previous')}>
           <img src="/images/icon-previous.svg" alt="Previous" />
         </button>
@@ -86,7 +88,7 @@ export default function Product() {
         </button>
       </ProductImage>
 
-      <Gallery>
+      <Gallery data-aos="fade-right">
         {images.map((image, index) => <img
           src={image.url}
           alt="Product"

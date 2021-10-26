@@ -15,7 +15,7 @@ export function AppProvider({ children }) {
       productInCart,
       setProductInCart,
       modalOpen, 
-      setModalOpen
+      setModalOpen,
     }}>
       { children }
     </AppContext.Provider>

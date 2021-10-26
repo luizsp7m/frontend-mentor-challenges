@@ -16,7 +16,7 @@ const GlobalStyle = createGlobalStyle`
   }
 
   body {
-    /* overflow: hidden; */
+    
   }
 
   #__next {

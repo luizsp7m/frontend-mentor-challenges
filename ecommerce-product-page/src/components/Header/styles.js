@@ -1,4 +1,14 @@
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
+
+const fadeIn = keyframes`
+  from {
+    right: 0;
+  }
+
+  to {
+    right: 30%;
+  }
+`;
 
 export const Container = styled.div`
   display: flex;
@@ -20,7 +30,7 @@ export const Container = styled.div`
     > div.nav {
       display: flex;
       align-items: center;
-      gap: 3rem;
+      gap: 2rem;
 
       > img.close {
         display: none;
@@ -31,8 +41,19 @@ export const Container = styled.div`
         color: #8C8F94;
         text-decoration: none;
         position: relative;
+        padding: 0 1rem;
 
-        &:hover::after {
+       
+        border-bottom: 4px solid transparent;
+        border-top: 4px solid transparent;
+        line-height: 92px;
+        transition: .25s;
+
+        &:hover {
+          border-bottom-color: #FF7D1B;
+        }
+
+        /* &:hover::after {
           content: "";
           position: absolute;
           right: 0;
@@ -40,7 +61,7 @@ export const Container = styled.div`
           bottom: -40px;
           height: 3px;
           background: #FF7D1B;
-        }
+        } */
       }
     }
   }
@@ -52,6 +73,13 @@ export const Container = styled.div`
 
     > img {
       cursor: pointer;
+      border: 3px solid transparent;
+      border-radius: 50%;
+      transition: .25s;
+
+      &:hover {
+        border-color: #FF7D1B;
+      }
     }
 
     > img.avatar {
@@ -180,16 +208,28 @@ export const Container = styled.div`
         display: flex;
         flex-direction: column;
         position: fixed;
-        background: #f0f0f5;
+        background: rgba(0, 0, 0, .85);
         top: 0;
         bottom: 0;
         left: 0;
-        right: 30%;
+        right: 0;
         min-height: 100vh;
         padding: 100px 0;
         align-items: flex-start;
         padding-left: 3.1rem;
-        z-index: 100;
+        z-index: 1000;
+
+        &::before {
+          animation: ${fadeIn} .3s ease-in-out;
+          content: "";
+          position: absolute;
+          top: 0;
+          left: 0;
+          bottom: 0;
+          right: 30%;
+          background-color: #f0f0f5;
+          min-height: 100vh;
+        }
 
         > img.close {
           display: block;
@@ -199,6 +239,13 @@ export const Container = styled.div`
 
         > a {
           font-weight: 700;
+
+          border: none;
+          line-height: 3rem;
+          
+          &:hover {
+            color: #FF7D1B;
+          }
         }
       }
     }

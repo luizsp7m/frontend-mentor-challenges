@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 
 export const Container = styled.div`
   display: flex;
@@ -78,6 +78,11 @@ export const Container = styled.div`
         background: 0;
         border: 0;
         cursor: pointer;
+        transition: opacity .25s;
+
+        &:hover {
+          opacity: .75;
+        }
       }
 
       > label {
