@@ -8,16 +8,17 @@ export const Container = styled.div`
 
   display: flex;
   flex-direction: column;
+  gap: 4rem;
 `;
 
 export const Wrapper = styled.div`
   max-width: 1100px;
   width: 90%;
-  margin: 5rem auto;
+  margin: 0 auto;
 
   display: flex;
   flex-direction: column;
-  gap: 5rem;
+  gap: 4rem;
 `
 
 export const Title = styled.div`
@@ -103,6 +104,7 @@ export const PlanetDescription = styled.div`
     width: 32rem;
     letter-spacing: .05rem;
     line-height: 2.45rem;
+    min-height: 12rem;
   }
 
   @media(max-width: 840px) {

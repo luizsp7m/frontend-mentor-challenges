@@ -10,6 +10,8 @@ import {
   CrewImage,
 } from "./styles";
 
+import Header from '../../components/Header';
+
 import data from '../../data.json';
 
 import { useState } from "react";
@@ -20,6 +22,7 @@ export default function Crew() {
 
   return (
     <Container>
+      <Header navItemSelected="crew" />
       <Wrapper>
         <Title><b>02</b> Meet your crew</Title>
 

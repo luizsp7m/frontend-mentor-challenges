@@ -8,16 +8,17 @@ export const Container = styled.div`
 
   display: flex;
   flex-direction: column;
+  gap: 4rem;
 `;
 
 export const Wrapper = styled.div`
   max-width: 1100px;
   width: 90%;
-  margin: 5rem auto;
+  margin: 0 auto;
 
   display: flex;
   flex-direction: column;
-  gap: 5rem;
+  gap: 4rem;
 `
 
 export const Title = styled.div`
@@ -25,7 +26,6 @@ export const Title = styled.div`
   font-size: 2rem;
   letter-spacing: .25rem;
   text-transform: uppercase;
-  
 
   > b {
     color: rgba(255, 255, 255, .5);
@@ -81,10 +81,14 @@ export const CrewDescription = styled.div`
     width: 35rem;
     letter-spacing: .05rem;
     line-height: 2.45rem;
+
+    min-height: 12rem;
   }
 
   @media(max-width: 840px) {
     text-align: center;
+    order: 2;
+    margin-top: 4rem;
 
     > p {
       width: 100%;
@@ -114,10 +118,19 @@ export const CrewImage = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  overflow: hidden;
 
   > img {
-    width: 100%;
-    height: auto;
+    height: 60rem;
+    width: auto;
     object-fit: cover;
+  }
+
+  @media(max-width: 840px) {
+    order: -1;
+
+    > img {
+      height: 30rem;
+    }
   }
 `

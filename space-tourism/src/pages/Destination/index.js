@@ -23,7 +23,7 @@ export default function Destination() {
 
   return (
     <Container>
-      {/* <Header /> */}
+      <Header navItemSelected="destination" />
 
       <Wrapper>
         <Title><b>01</b> Pick your destination</Title>

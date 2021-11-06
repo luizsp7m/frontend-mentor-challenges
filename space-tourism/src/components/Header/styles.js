@@ -3,54 +3,92 @@ import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
 export const Container = styled.div`
-  padding: 4rem 0;
-
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 2rem 0;
 `;
 
 export const Logo = styled.div`
-  padding: 0 4rem;
+  padding: 0 2rem;
+
+  > img {
+    max-width: 4rem;
+    width: 100%;
+    height: auto;
+  }
 `;
 
 export const Nav = styled.div`
+  background-color: rgba(0, 0, 0, .2);
+  padding: 0 12rem 0 9rem;
   display: flex;
   align-items: center;
   gap: 6rem;
-  padding: 0rem 12rem 0 10rem;
+  background: rgba(0, 0, 0, .025);
+  backdrop-filter: blur(15px);
 
-  background-color: rgba(255, 255, 255, .1);
-  backdrop-filter: blur(1rem);
+  @media(max-width: 880px) {
+    display: none;
+    
+    &.toggled {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+
+      position: fixed;
+      top: 0; bottom: 0;
+      left: 0; right: 0;
+
+      background: #0f0f0f;
+      backdrop-filter: unset;
+    }
+  }
 `
 
 export const NavItem = styled(Link)`
-  color: #fafafa;
+  color: rgba(255, 255, 255, .75);
+  text-decoration: none;
   display: flex;
   align-items: center;
-  gap: 1.35rem;
-  font-family: 'Barlow Condensed', sans-serif;
-  letter-spacing: .1rem;
-  text-decoration: none;
-
-  padding: 3.45rem 0;
-  border-top: 5px solid transparent;
-  border-bottom: 5px solid ${props => props.selected ? "#fafafa" : "transparent"};
-  cursor: pointer;
+  gap: 1rem;
+  padding: 3rem 0;
+  font-size: 1.8rem;
+  text-transform: uppercase;
+  letter-spacing: .05rem;
+  font-weight: 300;
   transition: .25s;
+
+  border-top: 3px solid transparent;
+  border-bottom: 3px solid ${({ selected }) => selected ? "#fafafa" : "transparent"};
 
   &:hover {
     border-bottom-color: #fafafa;
   }
 
   > b {
-    font-size: 2rem;
+    color: #fafafa;
   }
 
-  > span {
-    font-size: 2rem;
-    text-transform: uppercase;
-    color: rgba(255, 255, 255, .85);
-    font-weight: 300;
+  @media(max-width: 880px) {
+    padding: 1rem 0;
+    border: 0;
+  }
+`
+
+export const Burger = styled.div`
+  display: none;
+
+  @media(max-width: 880px) {
+    padding: 0 2rem;
+    height: 88px;
+    display: flex;
+    align-items: center;
+    
+    &.toggled {
+      position: fixed;
+      right: 0;
+      top: 2rem;
+    }
   }
 `
