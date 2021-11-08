@@ -7,10 +7,10 @@
 <br />
 
 <p align=center>
-  <a href="https://3-column-preview-card-component-zeta-plum.vercel.app/"><img width="250" src="./3-column-preview-card-component/design/desktop-preview.jpg"></a>
+  <a href="https://goofy-darwin-c796c8.netlify.app"><img width="250" src="./3-column-preview-card-component/design/desktop-preview.jpg"></a>
   <a href="https://nifty-kalam-677ad1.netlify.app/"><img width="250" src="./crowdfunding-product-page/design/desktop-preview.jpg"></a>
-  <a href="https://fylo-dark-theme-landing-page-peach.vercel.app/"><img width="250" src="./fylo-dark-theme-landing-page/design/desktop-preview.jpg"></a>
-  <a href="https://launch-countdown-timer-six-gamma.vercel.app/"><img width="250" src="./launch-countdown-timer/design/desktop-preview.jpg"></a>
+  <a href="https://laughing-khorana-3dc827.netlify.app"><img width="250" src="./fylo-dark-theme-landing-page/design/desktop-preview.jpg"></a>
+  <a href="https://dazzling-chandrasekhar-700cf5.netlify.app/"><img width="250" src="./launch-countdown-timer/design/desktop-preview.jpg"></a>
   <a href="https://cranky-jepsen-e924b5.netlify.app/"><img width="250" src="./loopstudios-landing-page/design/desktop-preview.jpg"></a>
   <a href="https://reverent-wozniak-e4a508.netlify.app/"><img width="250" src="./room-homepage/design/desktop-preview.jpg"></a>
   <a href="https://sleepy-khorana-57a258.netlify.app/"><img width="250" src="./stats-preview-card-component/design/desktop-preview.jpg"></a>
