@@ -2,7 +2,7 @@
 
 This is a solution to the [Launch countdown timer](https://www.frontendmentor.io/challenges/launch-countdown-timer-N0XkGfyz-).
 
-##### [Site URL](https://launch-countdown-timer-six-gamma.vercel.app/) 
+##### [Site URL](https://dazzling-chandrasekhar-700cf5.netlify.app/) 
 ##### [Solution](https://www.frontendmentor.io/solutions/launch-countdown-timer-v2-sDjA49K9x)
 
 ### The challenge
