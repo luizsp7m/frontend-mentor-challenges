@@ -25,10 +25,10 @@ export default function Technology() {
       <Header navItemSelected="technology" />
 
       <Wrapper>
-        <Title><b>03</b> Space launch 101</Title>
+        <Title data-aos="fade-right"><b>03</b> Space launch 101</Title>
 
         <Content>
-          <TechnologyContent>
+          <TechnologyContent data-aos="fade-right">
             <Nav>
               {data.technology.map((tech, index) => (
                 <NavItem
@@ -46,7 +46,7 @@ export default function Technology() {
             </TechnologyDescription>
           </TechnologyContent>
 
-          <Image>
+          <Image data-aos="fade-left">
             <img src={data.technology[technology].images.portrait} alt="OK" />
           </Image>
         </Content>

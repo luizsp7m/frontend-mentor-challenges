@@ -15,6 +15,10 @@ const GlobalStyle = createGlobalStyle`
     font-family: 'Barlow Condensed', sans-serif;
   }
 
+  body {
+    overflow-x: hidden;
+  }
+
   @media(max-width: 425px) {
     html {
       font-size: 50%;

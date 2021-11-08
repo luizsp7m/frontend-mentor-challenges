@@ -7,9 +7,11 @@ export const Container = styled.div`
   justify-content: space-between;
   align-items: center;
   padding: 2rem 0;
+
+  height: 10rem;
 `;
 
-export const Logo = styled.div`
+export const Logo = styled(Link)`
   padding: 0 2rem;
 
   > img {
@@ -29,9 +31,28 @@ export const Nav = styled.div`
   backdrop-filter: blur(15px);
 
   @media(max-width: 880px) {
-    display: none;
-    
+
+    position: fixed;
+    top: 0; bottom: 0;
+    right: 0; left: 50%;
+    background-color: #0f0f0f;
+
+    z-index: 10;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    backdrop-filter: unset;
+
+    transform: translateX(100%);
+    transition: transform .3s;
+
     &.toggled {
+      transform: translateX(0);
+    }
+    
+    /* &.toggled {
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -42,7 +63,9 @@ export const Nav = styled.div`
 
       background: #0f0f0f;
       backdrop-filter: unset;
-    }
+
+      z-index: 10;
+    } */
   }
 `
 
@@ -84,11 +107,6 @@ export const Burger = styled.div`
     height: 88px;
     display: flex;
     align-items: center;
-    
-    &.toggled {
-      position: fixed;
-      right: 0;
-      top: 2rem;
-    }
+    z-index: 10;
   }
 `

@@ -8,7 +8,7 @@ export default function Header({ navItemSelected = "home" }) {
 
   return (
     <Container>
-      <Logo>
+      <Logo to="/">
         <img src="/assets/shared/logo.svg" alt="Logo" />
       </Logo>
 

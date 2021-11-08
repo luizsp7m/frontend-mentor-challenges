@@ -24,10 +24,10 @@ export default function Crew() {
     <Container>
       <Header navItemSelected="crew" />
       <Wrapper>
-        <Title><b>02</b> Meet your crew</Title>
+        <Title data-aos="fade-right"><b>02</b> Meet your crew</Title>
 
         <Content>
-          <CrewContent>
+          <CrewContent data-aos="fade-right">
             <CrewDescription>
               <h2>{data.crew[person].role}</h2>
               <h1>{data.crew[person].name}</h1>
@@ -45,7 +45,7 @@ export default function Crew() {
             </NavCrew>
           </CrewContent>
 
-          <CrewImage>
+          <CrewImage data-aos="zoom-in">
             <img src={data.crew[person].images.png} alt={data.crew[person].name} />
           </CrewImage>
         </Content>

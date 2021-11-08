@@ -1,67 +1,92 @@
 import styled from 'styled-components';
 
+import { Link } from 'react-router-dom';
+
 export const Container = styled.div`
   min-height: 100vh;
   background-image: url("/assets/home/background-home-desktop.jpg");
   background-position: center;
   background-size: cover;
+
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
 `;
 
-export const Content = styled.div`
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+export const Main = styled.div`
   max-width: 1100px;
-  width: 95%;
-  margin: 5rem auto;
+  width: 90%;
+  margin: 0 auto;
 
-  > div.text {
-    display: flex;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 4rem;
+
+  @media(max-width: 840px) {
     flex-direction: column;
-    gap: 1rem;
+  }
+`
+
+export const Description = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  
+  > h2 {
+    color: rgba(255, 255, 255, .5);
+    font-weight: 300;
+    text-transform: uppercase;
+    font-size: 2rem;
+  }
+
+  > h1 {
     color: #fafafa;
+    font-weight: 400;
+    text-transform: uppercase;
+    font-size: 12rem;
+  }
 
-    > h3 {
-      font-size: 3rem;
-      text-transform: uppercase;
-      font-weight: 300;
-      font-family: 'Barlow Condensed', sans-serif;
-      color: rgba(255, 255, 255, .75);
-    }
+  > p {
+    font-size: 1.55rem;
+    color: rgba(255, 255, 255, .75);
+    width: 33rem;
+    letter-spacing: .05rem;
+    line-height: 2.45rem;
+  }
 
-    > h1 {
-      font-size: 12rem;
-      text-transform: uppercase;
-      font-weight: 400;
-    }
+  @media(max-width: 840px) {
+    text-align: center;
 
     > p {
-      font-size: 2rem;
-      font-family: 'Barlow Condensed', sans-serif;
-      font-weight: 300;
-      color: rgba(255, 255, 255, .75);
-      width: 40rem;
-      line-height: 3rem;
+      width: 100%;
     }
   }
+`
 
-  > div.button {
-    display: flex;
-    align-items: flex-end;
-    justify-content: flex-end;
-    
-    > button {
-      background: #fafafa;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      border: 0;
-      outline: 0;
-      height: 20rem;
-      width: 20rem;
-      border-radius: 50%;
-      font-size: 2rem;
-      text-transform: uppercase;
-      cursor: pointer;
+export const Button = styled(Link)`
+  width: 100%;
+  display: flex;
+  justify-content: center;
+
+  text-decoration: none;
+
+  > button {
+    width: 20rem;
+    height: 20rem;
+    border-radius: 50%;
+    border: 0;
+    font-size: 2.5rem;
+    text-transform: uppercase;
+    font-weight: 500;
+    cursor: pointer;
+    color: rgba(0, 0, 0, .75);
+    transition: .25s;
+
+    &:hover {
+      width: 22rem;
+      height: 22rem;
+      color: rgba(0, 0, 0, .85);
     }
   }
-`;
+`

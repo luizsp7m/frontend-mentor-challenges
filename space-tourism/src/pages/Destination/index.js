@@ -26,14 +26,14 @@ export default function Destination() {
       <Header navItemSelected="destination" />
 
       <Wrapper>
-        <Title><b>01</b> Pick your destination</Title>
+        <Title data-aos="fade-right"><b>01</b> Pick your destination</Title>
 
         <Content>
-          <PlanetImage>
+          <PlanetImage data-aos="zoom-in">
             <img src={data.destinations[planet].images.png} alt={data.destinations[planet].name} />
           </PlanetImage>
 
-          <PlanetContent>
+          <PlanetContent data-aos="fade-left">
             <PlanetNav>
               { data.destinations.map((destination, index) => (
                 <NavItem 
