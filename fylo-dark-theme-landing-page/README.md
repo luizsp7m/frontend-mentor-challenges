@@ -2,7 +2,7 @@
 
 This is a solution to the [Fylo dark theme landing page](https://www.frontendmentor.io/challenges/fylo-dark-theme-landing-page-5ca5f2d21e82137ec91a50fd).
 
-##### [Site URL](https://fylo-dark-theme-landing-page-peach.vercel.app/) 
+##### [Site URL](https://laughing-khorana-3dc827.netlify.app/) 
 ##### [Solution](https://www.frontendmentor.io/solutions/fylo-dark-theme-landing-page-IHOjX4Pln)
 
 ### The challenge
