@@ -2,7 +2,7 @@
 
 This is a solution to the [3-column preview card component](https://www.frontendmentor.io/challenges/3column-preview-card-component-pH92eAR2-).
 
-##### [Site URL](https://3-column-preview-card-component-zeta-plum.vercel.app/) 
+##### [Site URL](https://goofy-darwin-c796c8.netlify.app/) 
 ##### [Solution](https://www.frontendmentor.io/solutions/3-column-preview-using-css-grid-r6xiiYbpp)
 
 ### The challenge
