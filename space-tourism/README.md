@@ -2,8 +2,8 @@
 
 This is a solution to the [Space tourism multi-page website](https://www.frontendmentor.io/challenges/space-tourism-multipage-website-gRWj1URZ3).
 
-##### [Site URL](#) 
-##### [Solution](#)
+##### [Site URL](https://space-tourism-weld.vercel.app/) 
+##### [Solution](https://www.frontendmentor.io/solutions/space-tourism-website-with-react-f2wxzpw8p)
 
 ### The challenge
 
