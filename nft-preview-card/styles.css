@@ -1,0 +1,194 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body, input, button {
+  font-family: 'Outfit', sans-serif;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+main {
+  min-height: 100vh;
+  background-color: #0D1A2D;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 3rem;
+  cursor: default;
+
+  padding: 1rem;
+}
+
+.card {
+  padding: 2rem;
+  background-color: #15273F;
+  border-radius: 1rem;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+
+  max-width: 320px;
+  width: 100%;
+
+  animation: fadeIn .3s ease-in-out;
+
+  position: relative;
+
+  box-shadow: 
+    0 0 20px 30px #0C1729, 
+    0 0 20px 50px #0C192C;
+}
+
+.card-image {
+  position: relative;
+  cursor: pointer;
+  display: flex;
+}
+
+.card-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 1rem;
+}
+
+.view {
+  position: absolute;
+  top: 0; bottom: 0;
+  left: 0; right: 0;
+  border-radius: 1rem;
+  background-color: rgba(0, 255, 247, .3);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+  opacity: 0;
+
+  transition: opacity .25s ease-in-out;
+}
+
+.view img {
+  width: 50px;
+  height: auto;
+}
+
+.card-image:hover .view {
+  opacity: 1;
+}
+
+.card-body {
+  
+}
+
+.card-body h3 {
+  color: hsl(0, 0%, 100%);
+  font-size: 1.75rem;
+  font-weight: 600;
+  letter-spacing: .05rem;
+  cursor: pointer;
+  transition: color .3s ease-in-out;
+}
+
+.card-body h3:hover {
+  color: hsl(178, 100%, 50%);
+}
+
+.card-body p {
+  color: hsl(215, 51%, 70%);
+  font-size: 1.55rem;
+  margin: 2rem 0;
+  line-height: 2.15rem;
+}
+
+.card-flex {
+  display: flex;
+  justify-content: space-between;
+}
+
+.card-left, .card-right {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.card-left span {
+  color: hsl(178, 100%, 50%);
+  font-size: 1.35rem;
+  font-weight: 600;
+  letter-spacing: .025rem;
+}
+
+.card-right span {
+  color: hsl(215, 51%, 70%);
+  font-size: 1.35rem;
+  letter-spacing: .01rem;
+}
+
+.card-footer {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  width: 100%;
+  border-top: 1px solid hsl(215, 32%, 27%);
+  padding-top: 2rem;
+}
+
+.card-footer img {
+  width: 40px;
+  height: 40px;
+  border: 2px solid #fafafa;
+  border-radius: 50%;
+}
+
+.card-footer span {
+  color: hsl(215, 51%, 70%);
+  font-size: 1.45rem;
+  font-weight: 500;
+}
+
+.card-footer b {
+  color: #fafafa;
+  transition: color .3s ease-in-out;
+}
+
+.card-footer b:hover {
+  color: hsl(178, 100%, 50%);
+  cursor: pointer;
+}
+
+.attribution {
+  z-index: 10;
+  color: hsl(215, 51%, 70%);
+  font-size: 1.35rem;
+  animation: fadeIn .3s ease-in-out;
+}
+
+.attribution a {
+  color: hsl(178, 100%, 50%);
+  text-decoration: none;
+  font-weight: bold;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
