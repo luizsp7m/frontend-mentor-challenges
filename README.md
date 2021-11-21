@@ -22,4 +22,5 @@
   <a href="https://sharp-neumann-4b947d.netlify.app/"><img width="250" src="./time-tracking-dashboard-main/design/desktop-preview.jpg"></a>
   <a href="https://serene-fermat-550640.netlify.app/"><img width="250" src="./ecommerce-product-page/public/design/desktop-preview.jpg"></a>
   <a href="https://space-tourism-weld.vercel.app/"><img width="250" src="./space-tourism/design/space-tourism.jpg"></a>
+  <a href="https://sharp-easley-8d6722.netlify.app/"><img width="250" src="./nft-preview-card/design/desktop-preview.jpg"></a>
 </p>
