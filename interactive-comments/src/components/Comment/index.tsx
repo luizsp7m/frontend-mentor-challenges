@@ -1,62 +1,100 @@
 import { useState } from "react";
+import { useComment } from "../../contexts/CommentContext";
+import { User } from "../../types";
 import { InputComment } from "../InputComment";
-import { CommentContent } from "./components/CommentContent";
-import { Vote } from "./components/Vote";
 import styles from "./styles.module.scss";
-
-type User = {
-  username: String;
-  image: {
-    png: String;
-    webp: String;
-  },
-}
 
 interface CommentProps {
   id: String;
-  user: User;
-  createdAt: String;
   content: String;
+  createdAt: String;
   score: Number;
-  replyingTo?: String;
-  replyingToId?: String;
+  user: User;
+  replyingTo?: {
+    commentId: String;
+    username: String;
+  };
 }
 
 export function Comment({
-  id,
-  user,
-  createdAt,
-  content,
-  score,
-  replyingTo,
-  replyingToId,
+  id, content, createdAt, score, user, replyingTo = null,
 }: CommentProps) {
-  const [showInputUpdateComment, setShowInputUpdateComment] = useState(false);
+  const [showInputComment, setShowInputComment] = useState(false);
 
-  function handleShowInputUpdateComment() {
-    setShowInputUpdateComment(!showInputUpdateComment);
+  const { currentUser, updateScore } = useComment();
+
+  function onUpdateScore(score: Number) {
+    updateScore({ commentId: id, score, replyingTo });
   }
 
   return (
     <>
       <div className={styles.container}>
-        <Vote
-          score={score}
-          id={id}
-          replyingToId={replyingToId ? replyingToId : null}
-        />
+        <div className={styles.buttonGroup}>
+          <div className={styles.vote}>
+            <button onClick={() => onUpdateScore(Number(score) + 1)}>
+              <img src="/images/icon-plus.svg" alt="Plus" />
+            </button>
 
-        <CommentContent
-          id={id}
-          user={user}
-          createdAt={createdAt}
-          content={content}
-          replyingTo={replyingTo}
-          replyingToId={replyingToId ? replyingToId : null}
-          showInputUpdateComment={showInputUpdateComment}
-          handleShowInputUpdateComment={handleShowInputUpdateComment}
-        />
+            <button>
+              {score}
+            </button>
+
+            <button onClick={() => onUpdateScore(Number(score) - 1)}>
+              <img src="/images/icon-minus.svg" alt="Minus" />
+            </button>
+          </div>
+
+          {currentUser.username !== user.username ? (
+            <div className={styles.reply} onClick={() => setShowInputComment(!showInputComment)}>
+              <img src="/images/icon-reply.svg" alt="Reply" /> Reply
+            </div>
+          ) : (
+            <div className={styles.optionGroup}>
+              <div className={styles.delete}>
+                <img src="/images/icon-delete.svg" alt="Reply" /> Delete
+              </div>
+
+              <div className={styles.edit}>
+                <img src="/images/icon-edit.svg" alt="Reply" /> Edit
+              </div>
+            </div>
+          )}
+        </div>
+
+        <div className={styles.commentContainer}>
+          <div className={styles.commentHeader}>
+            <div className={styles.user}>
+              <img src={`${user.image.png}`} alt={`${user.username} Image`} />
+              <h5>{user.username}</h5>
+              {currentUser.username === user.username && <label>you</label>}
+              <time>{createdAt}</time>
+            </div>
+
+            {currentUser.username !== user.username ? (
+              <div className={styles.reply} onClick={() => setShowInputComment(!showInputComment)}>
+                <img src="/images/icon-reply.svg" alt="Reply" /> Reply
+              </div>
+            ) : (
+              <div className={styles.optionGroup}>
+                <div className={styles.delete}>
+                  <img src="/images/icon-delete.svg" alt="Reply" /> Delete
+                </div>
+
+                <div className={styles.edit}>
+                  <img src="/images/icon-edit.svg" alt="Reply" /> Edit
+                </div>
+              </div>
+            )}
+          </div>
+
+          <div className={styles.commentBody}>
+            <p>{replyingTo && <b>{replyingTo.username}</b>} {content}</p>
+          </div>
+        </div>
       </div>
+
+      {showInputComment && <InputComment isReply={true} />}
     </>
   );
 }

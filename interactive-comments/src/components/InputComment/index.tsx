@@ -1,54 +1,54 @@
-import { useComment } from "../../contexts/CommentContext";
-import styles from "./styles.module.scss";
-import { v4 as uuid } from "uuid";
 import { FormEvent, useState } from "react";
+import { useComment } from "../../contexts/CommentContext";
+import { v4 as uuid } from "uuid";
+import styles from "./styles.module.scss";
 
 interface InputCommentProps {
-  reply: Boolean;
+  isReply?: Boolean;
+  replyingTo?: {
+    commentId: String;
+    username: String;
+  };
 }
 
-export function InputComment({ reply }: InputCommentProps) {
-  const { createComment } = useComment();
+export function InputComment({ isReply = false, replyingTo }: InputCommentProps) {
+  const { currentUser, createComment, createReply } = useComment();
 
-  const [content, setContent] = useState('');
+  const [content, setContent] = useState("");
 
-  function handleCreateNewComment(event: FormEvent) {
+  function onCreateComment(event: FormEvent) {
     event.preventDefault();
+
+    if (isReply) {
+      return;
+    }
 
     const comment = {
       id: uuid(),
       content,
-      createdAt: String(new Date()),
+      createdAt: "1 hour ago",
       score: 0,
-      user: {
-        username: "juliusomo",
-        image: { 
-          "png": "./images/avatars/image-juliusomo.png",
-          "webp": "./images/avatars/image-juliusomo.webp"
-        },
-      },
+      user: currentUser,
       replies: [],
     };
 
     createComment(comment);
-
-    setContent('');
   }
 
   return (
-    <form className={styles.container} onSubmit={handleCreateNewComment}>
-      <img src="https://github.com/luizsp7m.png" alt="Avatar" />
+    <form onSubmit={onCreateComment} className={styles.container}>
+      <img src={`${currentUser.image.png}`} alt={`${currentUser.username} Image`} />
+
       <textarea
-        rows={5}
         placeholder="Add a comment..."
+        rows={3}
         value={content}
         onChange={({ target }) => setContent(target.value)}
-        required={true}
       />
 
       <div>
-        <img src="https://github.com/luizsp7m.png" alt="Avatar" />
-        <button type="submit">{reply ? "Reply" : "Send"}</button>
+        <img src={`${currentUser.image.png}`} alt={`${currentUser.username} Image`} />
+        <button type="submit">{isReply ? "Reply" : "Send"}</button>
       </div>
     </form>
   );

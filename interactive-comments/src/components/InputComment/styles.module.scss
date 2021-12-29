@@ -1,43 +1,37 @@
 .container {
-  background: hsl(0, 0%, 100%);
-  padding: 2.5rem;
-  display: flex;
-  align-items: flex-start;
-  gap: 2rem;
-  border-radius: 0.5rem;
-  border: 1px solid hsl(228, 33%, 97%);
+  background: var(--white);
+  padding: 2rem;
+  border-radius: 0.75rem;
+  border: 1px solid var(--very-light);
 
-  @media(max-width: 768px) {
-    display: flex;
-    flex-direction: column;
-  }
+  display: flex;
+  gap: 2rem;
 
   img {
-    height: 5rem;
     width: 5rem;
-    border-radius: 50%;
+    height: 5rem;
     object-fit: cover;
-
-    @media(max-width: 768px) {
-      display: none;
-    }
   }
 
   textarea {
     resize: none;
-    padding: 2rem;
-    font-size: 1.6rem;
-    width: 100%;
-    color: hsl(211, 10%, 45%);
+    outline: 0;
     flex: 1;
-    border-radius: 0.5rem;
-    border: 1px solid hsl(223, 19%, 93%);
-    outline: none;
-    transition: border-color 0.3s ease-in-out;
+    padding: 1.6rem;
+    color: var(--dark-blue);
+    border-radius: 0.75rem;
+    border: 1px solid var(--light-gray);
+    font-size: 1.6rem;
+    line-height: 2.6rem;
+    transition: border-color 0.25s ease-in-out;
     cursor: pointer;
 
+    &::-webkit-scrollbar {
+      width: 5px;
+    }
+
     &:focus {
-      border-color: hsl(211, 10%, 45%);
+      border-color: var(--light-grayish-blue);
     }
   }
 
@@ -47,17 +41,14 @@
     }
 
     button {
-      background: hsl(238, 40%, 52%);
-      border: 0;
-      font-size: 1.6rem;
-      color: hsl(0, 0%, 100%);
+      background: var(--moderate-blue);
+      color: var(--white);
       text-transform: uppercase;
-      font-weight: 500;
       padding: 1rem 2rem;
+      border: 0;
       border-radius: 0.5rem;
+      transition: opacity 0.25s ease-in-out;
       cursor: pointer;
-      outline: none;
-      transition: opacity 0.3s ease-in-out;
 
       &:hover {
         opacity: 0.5;
@@ -65,17 +56,18 @@
     }
   }
 
-  @media(max-width: 768px) {
+  @media (max-width: 768px) {
+    flex-direction: column;
+
+    img {
+      display: none;
+    }
+
     div {
       display: flex;
       justify-content: space-between;
-      align-items: center;
-      width: 100%;
-
       img {
         display: block;
-        height: 3.5rem;
-        width: 3.5rem;
       }
     }
   }

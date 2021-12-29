@@ -1,9 +1,8 @@
 .container {
   width: 100%;
-  max-width: 920px;
+  max-width: 768px;
   margin: 0 auto;
-  padding: 4rem;
-  position: relative;
+  padding: 2rem;
   min-height: 100vh;
 
   display: flex;
@@ -11,29 +10,28 @@
   gap: 2rem;
 }
 
-.containerComment {
+.comments {
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  // gap: 2rem;
 }
 
 .comment {
   display: flex;
   flex-direction: column;
-  gap: .5rem;
+  gap: 2rem;
 }
 
-.subComment {
-  padding-left: 4.5rem;
-  border-left: 2px solid hsl(223, 19%, 93%);
-  margin-left: 4.5rem;
-
+.replys {
   display: flex;
   flex-direction: column;
   gap: 2rem;
+  padding-left: 4rem;
+  border-left: 1px solid var(--light-gray);
+  margin-left: 4rem;
 
   @media (max-width: 768px) {
-    padding-left: 1.5rem;
+    padding-left: 2rem;
     margin-left: 0;
   }
 }

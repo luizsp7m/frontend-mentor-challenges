@@ -1,93 +1,70 @@
 import { createContext, ReactNode, useContext, useState } from "react";
-import { v4 as uuid } from "uuid";
+import { Comment, Reply, User } from "../types";
+
 import data from "../../data.json";
 
 interface CommentProviderProps {
   children: ReactNode;
 }
 
-type CommentProviderContextData = {
+interface CommentProviderContextData {
+  currentUser: User;
   comments: Comment[];
-  createComment: (commentInput: CommentInput) => void;
-  updateScore: (id: String, score: Number, replyingToId?: String) => void;
-  updateComment: (content: String, id: String, reply: String) => void;
+  updateScore: ({ commentId, score, replyingTo }: UpdateScoreProps) => void;
+  createComment: (comment: Comment) => void;
+  createReply: (reply: Reply) => void;
 }
 
-type User = {
-  username: String;
-  image: {
-    png: String;
-    webp: String;
-  },
-}
-
-type Reply = {
-  id: String;
-  content: String;
-  createdAt: String;
+interface UpdateScoreProps {
+  commentId: String;
   score: Number;
-  replyingTo: String;
-  user: User;
+  replyingTo?: {
+    commentId: String;
+    username: String;
+  };
 }
-
-type Comment = {
-  id: String;
-  content: String;
-  createdAt: String;
-  score: Number;
-  user: User;
-  replies?: Reply[];
-}
-
-type CommentInput = Comment;
 
 const CommentContext = createContext({} as CommentProviderContextData);
 
 export function CommentProvider({ children }: CommentProviderProps) {
+  const { currentUser } = data;
+
   const [comments, setComments] = useState<Comment[]>(data.comments);
 
-  function createComment(commentInput: CommentInput) {
-    const updateComments = [...comments];
-    updateComments.push(commentInput);
-    setComments(updateComments);
-  }
-
-  function updateScore(id: String, score: Number, replyingToId?: String) {
+  function updateScore({ commentId, score, replyingTo }: UpdateScoreProps) {
     const updateComments = [...comments];
 
-    if(replyingToId) {
-      const updateCommentByIndex = updateComments.find(comment => comment.id === replyingToId);
-      const commentIndex = updateCommentByIndex.replies.findIndex(comment => comment.id === id);
-      updateCommentByIndex.replies[commentIndex].score = score;
-      setComments(updateComments);
-      return;
-    } 
-
-    const commentIndex = updateComments.findIndex(comment => comment.id === id);
-
-    updateComments[commentIndex].score = score;
-
-    setComments(updateComments);
-  }
-
-  function updateComment(content: String, id: String, reply?: String) {
-    const updateComments = [...comments];
-    
-    if(reply) {
-      const updateCommentByIndex = updateComments.find(comment => comment.id === reply);
-      const commentIndex = updateCommentByIndex.replies.findIndex(comment => comment.id === id);
-      updateCommentByIndex.replies[commentIndex].content = content;
+    if(replyingTo) {
+      const comment = updateComments.find(comment => comment.id === replyingTo.commentId)
+      const commentIndex = comment.replies.findIndex(comment => comment.id === commentId);
+      comment.replies[commentIndex].score = score;
       setComments(updateComments);
       return;
     }
 
-    const commentIndex = updateComments.findIndex(comment => comment.id === id);
-    updateComments[commentIndex].content = content;
+    const commentIndex = updateComments.findIndex(comment => comment.id === commentId);
+    updateComments[commentIndex].score = score;
     setComments(updateComments);
   }
 
+  function createComment(comment: Comment) {
+    const updateComments = [...comments];
+    updateComments.push(comment);
+    setComments(updateComments);
+  }
+
+  function createReply(reply: Reply) {
+    console.log(reply);
+  }
+
   return (
-    <CommentContext.Provider value={{ comments, createComment, updateScore, updateComment }}>
+    <CommentContext.Provider value={{
+      currentUser,
+      comments,
+      updateScore,
+      createComment,
+      createReply,
+    }}>
       {children}
     </CommentContext.Provider>
   );

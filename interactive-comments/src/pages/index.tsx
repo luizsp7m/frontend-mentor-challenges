@@ -1,53 +1,45 @@
-import Head from "next/head";
-import styles from "./home.module.scss";
-import { InputComment } from "../components/InputComment";
 import { Comment } from "../components/Comment";
+import { InputComment } from "../components/InputComment";
 import { useComment } from "../contexts/CommentContext";
+import styles from "../styles/home.module.scss";
 
 export default function Home() {
   const { comments } = useComment();
 
   return (
-    <>
-      <Head>
-        <title>Interactive Comments</title>
-      </Head>
-
-      <div className={styles.container}>
+    <div className={styles.container}>
+      <div className={styles.comments}>
         {comments.map((comment, index) => (
-          <div key={index} className={styles.containerComment}>
-            <div className={styles.comment}>
-              <Comment
-                id={comment.id}
-                user={comment.user}
-                createdAt={comment.createdAt}
-                content={comment.content}
-                score={comment.score}
-              />
-            </div>
+          <div className={styles.comment} key={index}>
+            <Comment
+              id={comment.id}
+              content={comment.content}
+              createdAt={comment.createdAt}
+              score={comment.score}
+              user={comment.user}
+            />
 
-            <div key={index} className={styles.subComment}>
+            <div className={styles.replys}>
               {comment.replies.map((reply, index) => (
-                <div className={styles.comment} key={index}>
-                  <Comment
-                    id={reply.id}
-                    user={reply.user}
-                    createdAt={reply.createdAt}
-                    content={reply.content}
-                    score={reply.score}
-                    replyingTo={reply.replyingTo}
-                    replyingToId={comment.id}
-                  />
-                </div>
+                <Comment
+                  key={index}
+                  id={reply.id}
+                  content={reply.content}
+                  createdAt={reply.createdAt}
+                  score={reply.score}
+                  user={reply.user}
+                  replyingTo={{
+                    commentId: comment.id,
+                    username: comment.user.username,
+                  }}
+                />
               ))}
-
-              {/* <InputComment reply={true} /> */}
             </div>
           </div>
         ))}
-
-        <InputComment reply={false} />
       </div>
-    </>
+
+      <InputComment />
+    </div>
   );
 }
