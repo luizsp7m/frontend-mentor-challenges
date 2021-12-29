@@ -1,0 +1,13 @@
+.container {
+  padding: 2.5rem;
+  background: hsl(0, 0%, 100%);
+  border-radius: 0.5rem;
+  border: 1px solid hsl(228, 33%, 97%);
+  display: flex;
+  gap: 4rem;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}

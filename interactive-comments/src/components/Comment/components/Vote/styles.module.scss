@@ -1,0 +1,60 @@
+.container {
+  display: flex;
+
+  @media (max-width: 768px) {
+    order: 1;
+    width: 100%;
+    justify-content: space-between;
+  }
+}
+
+.buttonGroup {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  @media (max-width: 768px) {
+    flex-direction: row;
+  }
+
+  button {
+    border: 0;
+    outline: 0;
+    height: 4rem;
+    width: 4rem;
+    font-size: 1.6rem;
+    font-weight: 500;
+    color: hsl(238, 40%, 52%);
+    background: hsl(228, 33%, 97%);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &:nth-child(1) {
+      border-top-right-radius: 0.5rem;
+      border-top-left-radius: 0.5rem;
+      cursor: pointer;
+    }
+
+    &:nth-child(3) {
+      border-bottom-right-radius: 0.5rem;
+      border-bottom-left-radius: 0.5rem;
+      cursor: pointer;
+    }
+
+    @media (max-width: 768px) {
+      &:nth-child(1) {
+        transform: rotate(270deg);
+      }
+
+      &:nth-child(3) {
+        transform: rotate(270deg);
+
+        img {
+          transform: rotate(270deg);
+        }
+      }
+    }
+  }
+}
