@@ -35,3 +35,14 @@
     margin-left: 0;
   }
 }
+
+.attribution {
+  text-align: center;
+  padding: 2rem;
+  color: var(--dark-blue);
+
+  a {
+    color: var(--moderate-blue);
+    font-weight: 500;
+  }
+}
