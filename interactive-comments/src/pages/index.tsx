@@ -1,4 +1,5 @@
 import { Comment } from "../components/Comment";
+import { DeleteModal } from "../components/DeleteModal";
 import { InputComment } from "../components/InputComment";
 import { useComment } from "../contexts/CommentContext";
 import styles from "../styles/home.module.scss";
@@ -40,6 +41,8 @@ export default function Home() {
       </div>
 
       <InputComment />
+
+      {/* <DeleteModal /> */}
     </div>
   );
 }

@@ -36,6 +36,27 @@ body {
   cursor: default;
 }
 
+.react-modal-overlay {
+  background: rgba(0, 0, 0, 0.5);
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.react-modal-content {
+  width: 100%;
+  max-width: 455px;
+  background: var(--background);
+  padding: 3rem;
+  position: relative;
+  border-radius: 0.24rem;
+}
+
 @media (max-width: 375px) {
   html {
     font-size: 50%;

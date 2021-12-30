@@ -12,7 +12,8 @@ interface CommentProviderContextData {
   comments: Comment[];
   updateScore: ({ commentId, score, replyingTo }: UpdateScoreProps) => void;
   createComment: (comment: Comment) => void;
-  createReply: (reply: Reply) => void;
+  createReply: (reply: Reply) => void; // TO DO
+  deleteComment: ({ commentId, replyingTo }: DeleteCommentProps) => void;
 }
 
 interface UpdateScoreProps {
@@ -22,6 +23,15 @@ interface UpdateScoreProps {
     commentId: String;
     username: String;
   };
+}
+
+interface DeleteCommentProps {
+  commentId: String;
+  replyingTo?: {
+    commentId: String;
+    username: String;
+  };
+  closeModal: () => void;
 }
 
 const CommentContext = createContext({} as CommentProviderContextData);
@@ -34,7 +44,7 @@ export function CommentProvider({ children }: CommentProviderProps) {
   function updateScore({ commentId, score, replyingTo }: UpdateScoreProps) {
     const updateComments = [...comments];
 
-    if(replyingTo) {
+    if (replyingTo) {
       const comment = updateComments.find(comment => comment.id === replyingTo.commentId)
       const commentIndex = comment.replies.findIndex(comment => comment.id === commentId);
       comment.replies[commentIndex].score = score;
@@ -54,7 +64,25 @@ export function CommentProvider({ children }: CommentProviderProps) {
   }
 
   function createReply(reply: Reply) {
-    console.log(reply);
+    // TO DO
+  }
+
+  function deleteComment({ commentId, replyingTo, closeModal }: DeleteCommentProps) {
+    const updateComments = [...comments];
+
+    if (replyingTo) {
+      const comment = updateComments.find(comment => comment.id === replyingTo.commentId);
+      const commentIndex = comment.replies.findIndex(comment => comment.id === commentId);
+      comment.replies.splice(commentIndex, 1);
+      setComments(updateComments);
+      closeModal();
+      return;
+    }
+
+    const commentIndex = updateComments.findIndex(comment => comment.id === commentId);
+    updateComments.splice(commentIndex, 1);
+    setComments(updateComments);
+    closeModal();
   }
 
   return (
@@ -64,6 +92,7 @@ export function CommentProvider({ children }: CommentProviderProps) {
       updateScore,
       createComment,
       createReply,
+      deleteComment
     }}>
       {children}
     </CommentContext.Provider>

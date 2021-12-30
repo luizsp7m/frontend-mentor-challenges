@@ -33,6 +33,7 @@ export function InputComment({ isReply = false, replyingTo }: InputCommentProps)
     };
 
     createComment(comment);
+    setContent("");
   }
 
   return (
@@ -44,6 +45,7 @@ export function InputComment({ isReply = false, replyingTo }: InputCommentProps)
         rows={3}
         value={content}
         onChange={({ target }) => setContent(target.value)}
+        required={true}
       />
 
       <div>

@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useComment } from "../../contexts/CommentContext";
 import { User } from "../../types";
+import { DeleteModal } from "../DeleteModal";
 import { InputComment } from "../InputComment";
 import styles from "./styles.module.scss";
 
@@ -21,10 +22,24 @@ export function Comment({
 }: CommentProps) {
   const [showInputComment, setShowInputComment] = useState(false);
 
-  const { currentUser, updateScore } = useComment();
+  const { currentUser, updateScore, deleteComment } = useComment();
+
+  const [modalIsOpen, setIsOpen] = useState(false);
+
+  function openModal() {
+    setIsOpen(true);
+  }
+
+  function closeModal() {
+    setIsOpen(false);
+  }
 
   function onUpdateScore(score: Number) {
     updateScore({ commentId: id, score, replyingTo });
+  }
+
+  function onDeleteComment() {
+    deleteComment({ commentId: id, replyingTo, closeModal });
   }
 
   return (
@@ -77,7 +92,7 @@ export function Comment({
               </div>
             ) : (
               <div className={styles.optionGroup}>
-                <div className={styles.delete}>
+                <div className={styles.delete} onClick={openModal}>
                   <img src="/images/icon-delete.svg" alt="Reply" /> Delete
                 </div>
 
@@ -95,6 +110,12 @@ export function Comment({
       </div>
 
       {showInputComment && <InputComment isReply={true} />}
+
+      <DeleteModal 
+        closeModal={closeModal}
+        modalIsOpen={modalIsOpen}
+        onDelete={onDeleteComment}
+      />
     </>
   );
 }
