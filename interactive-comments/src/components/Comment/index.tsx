@@ -4,6 +4,7 @@ import { User } from "../../types";
 import { DeleteModal } from "../DeleteModal";
 import { InputComment } from "../InputComment";
 import styles from "./styles.module.scss";
+import { formatDistanceToNowStrict } from "date-fns";
 
 interface CommentProps {
   id: String;
@@ -11,6 +12,7 @@ interface CommentProps {
   createdAt: String;
   score: Number;
   user: User;
+  replyingToUsername?: String;
   replyingTo?: {
     commentId: String;
     username: String;
@@ -18,7 +20,7 @@ interface CommentProps {
 }
 
 export function Comment({
-  id, content, createdAt, score, user, replyingTo = null,
+  id, content, createdAt, score, user, replyingTo = null, replyingToUsername,
 }: CommentProps) {
   const [showInputComment, setShowInputComment] = useState(false);
 
@@ -49,11 +51,18 @@ export function Comment({
     deleteComment({ commentId: id, replyingTo, closeModal });
   }
 
+  function closeInputComment() {
+    setShowInputComment(false);
+  }
+
   function onUpdateComment(event: FormEvent) {
     event.preventDefault();
-
     updateComment({ commentId: id, replyingTo, contentInput, closeInput });
   }
+
+  const dateFormatted = formatDistanceToNowStrict(new Date(`${createdAt}`), {
+    
+  })
 
   return (
     <>
@@ -79,11 +88,11 @@ export function Comment({
             </div>
           ) : (
             <div className={styles.optionGroup}>
-              <div className={styles.delete}>
+              <div className={styles.delete} onClick={openModal}>
                 <img src="/images/icon-delete.svg" alt="Reply" /> Delete
               </div>
 
-              <div className={styles.edit}>
+              <div className={styles.edit} onClick={() => setEditIsOpen(!editIsOpen)}>
                 <img src="/images/icon-edit.svg" alt="Reply" /> Edit
               </div>
             </div>
@@ -96,7 +105,7 @@ export function Comment({
               <img src={`${user.image.png}`} alt={`${user.username} Image`} />
               <h5>{user.username}</h5>
               {currentUser.username === user.username && <label>you</label>}
-              <time>{createdAt}</time>
+              <time>{dateFormatted} ago</time>
             </div>
 
             {currentUser.username !== user.username ? (
@@ -129,13 +138,18 @@ export function Comment({
                 <button type="submit">Update</button>
               </form>
             ) : (
-              <p>{replyingTo && <b>{replyingTo.username}</b>} {content}</p>
+              <p>{replyingTo && <b>@{replyingToUsername}</b>} {content}</p>
             )}
           </div>
         </div>
       </div>
 
-      {showInputComment && <InputComment isReply={true} />}
+      {showInputComment && <InputComment
+        commentId={id}
+        replyingTo={replyingTo}
+        replyingToUsername={user.username}
+        closeInput={closeInputComment}
+      />}
 
       <DeleteModal
         closeModal={closeModal}

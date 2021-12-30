@@ -19,7 +19,6 @@
 .comment {
   display: flex;
   flex-direction: column;
-  gap: 2rem;
 }
 
 .replys {
@@ -29,6 +28,7 @@
   padding-left: 4rem;
   border-left: 1px solid var(--light-gray);
   margin-left: 4rem;
+  margin-top: 2rem;
 
   @media (max-width: 768px) {
     padding-left: 2rem;

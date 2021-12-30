@@ -20,29 +20,30 @@ export default function Home() {
               user={comment.user}
             />
 
-            <div className={styles.replys}>
-              {comment.replies.map((reply, index) => (
-                <Comment
-                  key={index}
-                  id={reply.id}
-                  content={reply.content}
-                  createdAt={reply.createdAt}
-                  score={reply.score}
-                  user={reply.user}
-                  replyingTo={{
-                    commentId: comment.id,
-                    username: comment.user.username,
-                  }}
-                />
-              ))}
-            </div>
+            {comment.replies.length > 0 && (
+              <div className={styles.replys}>
+                {comment.replies.map((reply, index) => (
+                  <Comment
+                    key={index}
+                    id={reply.id}
+                    content={reply.content}
+                    createdAt={reply.createdAt}
+                    score={reply.score}
+                    user={reply.user}
+                    replyingToUsername={reply.replyingTo}
+                    replyingTo={{
+                      commentId: comment.id,
+                      username: comment.user.username,
+                    }}
+                  />
+                ))}
+              </div>
+            )}
           </div>
         ))}
       </div>
 
       <InputComment />
-
-      {/* <DeleteModal /> */}
     </div>
   );
 }

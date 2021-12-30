@@ -4,14 +4,16 @@ import { v4 as uuid } from "uuid";
 import styles from "./styles.module.scss";
 
 interface InputCommentProps {
-  isReply?: Boolean;
+  commentId?: String;
+  replyingToUsername?: String;
   replyingTo?: {
     commentId: String;
     username: String;
   };
+  closeInput?: () => void;
 }
 
-export function InputComment({ isReply = false, replyingTo }: InputCommentProps) {
+export function InputComment({ commentId, replyingTo, replyingToUsername, closeInput }: InputCommentProps) {
   const { currentUser, createComment, createReply } = useComment();
 
   const [content, setContent] = useState("");
@@ -19,14 +21,29 @@ export function InputComment({ isReply = false, replyingTo }: InputCommentProps)
   function onCreateComment(event: FormEvent) {
     event.preventDefault();
 
-    if (isReply) {
+    const date = new Date();
+    const createdAt = date.toISOString();
+
+    if (commentId) {
+      const reply = {
+        id: uuid(),
+        content,
+        createdAt,
+        score: 0,
+        user: currentUser,
+        replyingTo: replyingToUsername,
+      };
+
+      createReply({ commentId, replyingTo, reply });
+      setContent("");
+      closeInput();
       return;
     }
 
     const comment = {
       id: uuid(),
       content,
-      createdAt: "1 hour ago",
+      createdAt,
       score: 0,
       user: currentUser,
       replies: [],
@@ -50,7 +67,7 @@ export function InputComment({ isReply = false, replyingTo }: InputCommentProps)
 
       <div>
         <img src={`${currentUser.image.png}`} alt={`${currentUser.username} Image`} />
-        <button type="submit">{isReply ? "Reply" : "Send"}</button>
+        <button type="submit">{commentId ? "Reply" : "Send"}</button>
       </div>
     </form>
   );
