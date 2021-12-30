@@ -13,7 +13,8 @@ interface CommentProviderContextData {
   updateScore: ({ commentId, score, replyingTo }: UpdateScoreProps) => void;
   createComment: (comment: Comment) => void;
   createReply: (reply: Reply) => void; // TO DO
-  deleteComment: ({ commentId, replyingTo }: DeleteCommentProps) => void;
+  deleteComment: ({ commentId, replyingTo, closeModal }: DeleteCommentProps) => void;
+  updateComment: ({ commentId, replyingTo, contentInput, closeInput }: UpdateCommentProps) => void;
 }
 
 interface UpdateScoreProps {
@@ -32,6 +33,16 @@ interface DeleteCommentProps {
     username: String;
   };
   closeModal: () => void;
+}
+
+interface UpdateCommentProps {
+  commentId: String;
+  replyingTo?: {
+    commentId: String;
+    username: String;
+  };
+  contentInput: String;
+  closeInput: () => void;
 }
 
 const CommentContext = createContext({} as CommentProviderContextData);
@@ -85,6 +96,24 @@ export function CommentProvider({ children }: CommentProviderProps) {
     closeModal();
   }
 
+  function updateComment({ commentId, replyingTo, contentInput, closeInput }: UpdateCommentProps) {
+    const arrayComment = [...comments];
+
+    if(replyingTo) {
+      const comment = arrayComment.find(comment => comment.id === replyingTo.commentId);
+      const commentIndex = comment.replies.findIndex(comment => comment.id === commentId);
+      comment.replies[commentIndex].content = contentInput;
+      setComments(arrayComment);
+      closeInput();
+      return;
+    }
+
+    const commentIndex = arrayComment.findIndex(comment => comment.id === commentId);
+    arrayComment[commentIndex].content = contentInput;
+    setComments(arrayComment);
+    closeInput();
+  }
+
   return (
     <CommentContext.Provider value={{
       currentUser,
@@ -92,7 +121,8 @@ export function CommentProvider({ children }: CommentProviderProps) {
       updateScore,
       createComment,
       createReply,
-      deleteComment
+      deleteComment,
+      updateComment,
     }}>
       {children}
     </CommentContext.Provider>

@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { FormEvent, useState } from "react";
 import { useComment } from "../../contexts/CommentContext";
 import { User } from "../../types";
 import { DeleteModal } from "../DeleteModal";
@@ -22,7 +22,7 @@ export function Comment({
 }: CommentProps) {
   const [showInputComment, setShowInputComment] = useState(false);
 
-  const { currentUser, updateScore, deleteComment } = useComment();
+  const { currentUser, updateScore, deleteComment, updateComment } = useComment();
 
   const [modalIsOpen, setIsOpen] = useState(false);
 
@@ -38,8 +38,21 @@ export function Comment({
     updateScore({ commentId: id, score, replyingTo });
   }
 
+  const [contentInput, setContentInput] = useState(content);
+  const [editIsOpen, setEditIsOpen] = useState(false);
+
+  function closeInput() {
+    setEditIsOpen(false);
+  }
+
   function onDeleteComment() {
     deleteComment({ commentId: id, replyingTo, closeModal });
+  }
+
+  function onUpdateComment(event: FormEvent) {
+    event.preventDefault();
+
+    updateComment({ commentId: id, replyingTo, contentInput, closeInput });
   }
 
   return (
@@ -96,7 +109,7 @@ export function Comment({
                   <img src="/images/icon-delete.svg" alt="Reply" /> Delete
                 </div>
 
-                <div className={styles.edit}>
+                <div className={styles.edit} onClick={() => setEditIsOpen(!editIsOpen)}>
                   <img src="/images/icon-edit.svg" alt="Reply" /> Edit
                 </div>
               </div>
@@ -104,14 +117,27 @@ export function Comment({
           </div>
 
           <div className={styles.commentBody}>
-            <p>{replyingTo && <b>{replyingTo.username}</b>} {content}</p>
+            {editIsOpen ? (
+              <form onSubmit={onUpdateComment} className={styles.inputGroup}>
+                <textarea
+                  placeholder="Add a comment..."
+                  rows={3}
+                  value={`${contentInput}`}
+                  onChange={({ target }) => setContentInput(target.value)}
+                  required={true}
+                />
+                <button type="submit">Update</button>
+              </form>
+            ) : (
+              <p>{replyingTo && <b>{replyingTo.username}</b>} {content}</p>
+            )}
           </div>
         </div>
       </div>
 
       {showInputComment && <InputComment isReply={true} />}
 
-      <DeleteModal 
+      <DeleteModal
         closeModal={closeModal}
         modalIsOpen={modalIsOpen}
         onDelete={onDeleteComment}
