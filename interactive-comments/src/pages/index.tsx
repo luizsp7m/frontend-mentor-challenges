@@ -3,6 +3,7 @@ import { DeleteModal } from "../components/DeleteModal";
 import { InputComment } from "../components/InputComment";
 import { useComment } from "../contexts/CommentContext";
 import Head from "next/head";
+import Link from "next/link";
 import styles from "../styles/home.module.scss";
 
 export default function Home() {
@@ -53,8 +54,8 @@ export default function Home() {
       </div>
 
       <div className={styles.attribution}>
-        Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
-        Coded by <a href="https://github.com/luizsp7m" target="_blank">Luiz</a>.
+        Challenge by <Link href="https://www.frontendmentor.io?ref=challenge" passHref >Frontend Mentor</Link>.
+        Coded by <Link href="https://github.com/luizsp7m" passHref>Luiz</Link>.
       </div>
     </>
   );

@@ -19,7 +19,7 @@ export function DeleteModal({ modalIsOpen, closeModal, onDelete }: DeleteModalPr
     >
       <div className={styles.container}>
         <h1>Delete comment</h1>
-        <p>Are you sure want to delete this comment? This will remove the comment and can't be undone.</p>
+        <p>Are you sure want to delete this comment? This will remove the comment and cant be undone.</p>
         <div>
           <button className={styles.cancel} onClick={closeModal}>NO, CANCEL</button>
           <button className={styles.delete} onClick={onDelete}>YES, DELETE</button>
