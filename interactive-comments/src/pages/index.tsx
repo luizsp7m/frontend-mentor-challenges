@@ -19,13 +19,15 @@ export default function Home() {
         <div className={styles.comments}>
           {comments.map((comment, index) => (
             <div className={styles.comment} key={index}>
-              <Comment
-                id={comment.id}
-                content={comment.content}
-                createdAt={comment.createdAt}
-                score={comment.score}
-                user={comment.user}
-              />
+              <div>
+                <Comment
+                  id={comment.id}
+                  content={comment.content}
+                  createdAt={comment.createdAt}
+                  score={comment.score}
+                  user={comment.user}
+                />
+              </div>
 
               {comment.replies.length > 0 && (
                 <div className={styles.replys}>
