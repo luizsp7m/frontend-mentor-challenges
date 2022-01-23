@@ -24,4 +24,5 @@
   <a href="https://space-tourism-weld.vercel.app/"><img width="250" src="./space-tourism/design/space-tourism.jpg"></a>
   <a href="https://sharp-easley-8d6722.netlify.app/"><img width="250" src="./nft-preview-card/design/desktop-preview.jpg"></a>
   <a href="https://interactive-comments-nine.vercel.app/"><img width="250" src="./interactive-comments/public/design/desktop-preview.jpg"></a>
+  <a href="https://confident-leakey-348d76.netlify.app/"><img width="250" src="./qr-code-component/design/desktop-preview.jpg"></a>
 </p>
