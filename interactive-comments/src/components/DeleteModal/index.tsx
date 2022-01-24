@@ -3,7 +3,6 @@ import styles from "./styles.module.scss";
 import Modal from "react-modal";
 
 interface DeleteModalProps {
-  // Arrumar esse Boolean
   modalIsOpen: boolean; 
   closeModal: () => void;
   onDelete: () => void;
