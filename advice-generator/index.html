@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <title>Frontend Mentor | Advice generator app</title>
+</head>
+
+<body>
+  <div class="container">
+    <div class="card">
+      <h5>Advice <span id="quoteId">117</span></h5>
+      <q id="quoteAdvice">It is easy to sit up and take notice, what’s difficult is getting up and taking action</q>
+      <div id="loading"></div>
+      <img src="images/pattern-divider-desktop.svg" alt="Divider">
+
+      <button onclick="newQuote()">
+        <img src="images/icon-dice.svg" alt="Dice">
+      </button>
+    </div>
+
+    <div class="attribution">
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+      Coded by <a href="https://github.com/luizsp7m/" target="_blank">Luiz</a>.
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+
+</html>
