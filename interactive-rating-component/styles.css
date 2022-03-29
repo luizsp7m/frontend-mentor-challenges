@@ -1,0 +1,145 @@
+@import url('https://fonts.googleapis.com/css2?family=Overpass:wght@400;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --ORANGE: hsl(25, 97%, 53%);
+  --WHITE: hsl(0, 0%, 100%);
+
+  --LIGHT_GREY: #969CA8;
+  --MEDIUM_GREY: #262F37; 
+
+  --DARK_BLUE: #1A212B;
+  --VERY_DARK_BLUE: #141519;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body, button {
+  font-family: "Overpass", sans-serif;
+}
+
+body {
+  background: var(--VERY_DARK_BLUE);
+}
+
+.container {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card {
+  background: var(--DARK_BLUE);
+  padding: 3.2rem;
+  border-radius: 1.6rem;
+  width: 100%;
+  max-width: 395px;
+}
+
+.card-icon {
+  height: 4.2rem;
+  width: 4.2rem;
+  border-radius: 50%;
+  background: var(--MEDIUM_GREY);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 2.2rem;
+}
+
+.card-title {
+  font-size: 2.45rem;
+  color: var(--WHITE);
+  margin-bottom: 1.2rem;
+}
+
+.card-body {
+  font-size: 1.50rem;
+  line-height: 2.4rem;
+  color: var(--LIGHT_GREY);
+  margin-bottom: 2.8rem;
+}
+
+.card-rating {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 1.6rem;
+  margin-bottom: 2.8rem;
+}
+
+.card-rating button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  height: 4.2rem;
+  width: 4.2rem;
+  border-radius: 50%;
+  border: 0;
+  outline: 0;
+  font-size: 1.45rem;
+  font-weight: 700;
+  color: var(--LIGHT_GREY);
+  background: var(--MEDIUM_GREY);
+  transition: color 0.25s ease-in-out, background 0.25s ease-in-out;
+  cursor: pointer;
+}
+
+.card-rating button.selected {
+  background: var(--LIGHT_GREY);
+  color: var(--WHITE);
+}
+
+.card-rating button:hover {
+  background: var(--ORANGE);
+  color: var(--WHITE);
+}
+
+.card-submit {
+  width: 100%;
+  padding: 1.4rem 0;
+  border: 0;
+  outline: 0;
+  border-radius: 2.2rem;
+  background: var(--ORANGE);
+  color: var(--WHITE);
+  font-size: 1.50rem;
+  text-transform: uppercase;
+  transition: color 0.25s ease-in-out, background 0.25s ease-in-out;
+  cursor: pointer;
+}
+
+.card-submit:hover {
+  background: var(--WHITE);
+  color: var(--ORANGE);
+}
+
+.card#thanks {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.card#thanks .card-body {
+  text-align: center;
+  margin-bottom: 0;
+}
+
+.card-subtitle {
+  margin: 2.6rem 0;
+  font-size: 1.35rem;
+  padding: 0.75rem 1.85rem;
+  background: var(--MEDIUM_GREY);
+  color: var(--ORANGE);
+  font-weight: 400;
+  border-radius: 1.6rem;
+}
