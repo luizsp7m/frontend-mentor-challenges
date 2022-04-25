@@ -1,15 +1,19 @@
+import { Customers } from "../../components/Customers";
+import { Header } from "../../components/Header";
 import { Container, Main, Presentation, Hero } from "./styles";
 
 export function Home() {
   return (
     <Container>
-      {/* <Navbar /> */}
+      <Header />
 
       <Main>
         <Presentation>
           <h1>Make <br /> remote work</h1>
           <p>Get your team in sync, no matter your location. Streamline processes, create team rituals, and watch productivity soar.</p>
           <button>Learn more</button>
+
+          <Customers />
         </Presentation>
 
         <Hero>

@@ -25,7 +25,9 @@ export const GlobalStyle = createGlobalStyle`
     background: var(--white);
   }
 
-  @media(max-width: 425px) {
+  @media(max-width: 475px) {
+    html {
     font-size: 50%;
+  }
   }
 `;
