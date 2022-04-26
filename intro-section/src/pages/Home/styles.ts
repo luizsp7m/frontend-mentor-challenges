@@ -14,7 +14,7 @@ export const Main = styled.div`
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   align-items: center;
-  gap: 3.2rem;
+  gap: 4.4rem;
 
   @media(max-width: 1110px) {
     grid-template-columns: repeat(1, 1fr);
@@ -28,6 +28,7 @@ export const Presentation = styled.div`
   height: 62rem;
   gap: 3.2rem;
   position: relative;
+  z-index: -10;
 
   h1 {
     font-size: 8rem;
@@ -63,6 +64,7 @@ export const Presentation = styled.div`
   @media(max-width: 1110px) {
     align-items: center;
     gap: 3.2rem;
+    height: auto;
 
     h1, p {
       text-align: center;
@@ -81,13 +83,35 @@ export const Presentation = styled.div`
 `;
 
 export const Hero = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
   img {
     height: 62rem;
     width: 100%;
     object-fit: contain;
   }
 
+  img.mobile {
+    display: none;
+  }
+
   @media(max-width: 1110px) {
     order: -1;
+
+    img {
+      width: 90%;
+      height: auto;
+    }
+
+    img.mobile {
+      display: block;
+    }
+
+
+    img.desktop {
+      display: none;
+    }
   }
 `;

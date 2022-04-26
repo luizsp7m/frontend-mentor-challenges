@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { 
   Container, 
   Wrapper, 
@@ -12,6 +13,8 @@ import {
 } from "./styles";
 
 export function Header() {
+  const [showMenu, setShowMenu] = useState(false);
+
   return (
     <Container>
       <Wrapper>
@@ -20,7 +23,7 @@ export function Header() {
             <img src="/assets/images/logo.svg" alt="Logo" />
           </Logo>
 
-          <Nav>
+          <Nav toggled={!showMenu}>
             <NavItem>
               <a href="#">
                 <span>Features</span>
@@ -94,8 +97,8 @@ export function Header() {
           <button className="register">Register</button>
         </ButtonGroup>
 
-        <Menu>
-          <img src="/assets/images/icon-menu.svg" alt="Icon" />
+        <Menu onClick={() => setShowMenu(!showMenu)}>
+          { showMenu ? <img src="/assets/images/icon-close-menu.svg" alt="Icon" /> : <img src="/assets/images/icon-menu.svg" alt="Icon" /> }
         </Menu>
       </Wrapper>
     </Container>

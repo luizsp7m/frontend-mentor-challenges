@@ -1,5 +1,9 @@
 import styled from "styled-components";
 
+interface NavProps {
+  toggled: boolean;
+}
+
 export const Container = styled.div`
   position: fixed;
   width: 100%;
@@ -23,7 +27,7 @@ export const Navbar = styled.div`
   gap: 5.2rem;
 `;
 
-export const Nav = styled.div`
+export const Nav = styled.div<NavProps>`
   display: flex;
   align-items: center;
   gap: 3.6rem;
@@ -33,12 +37,28 @@ export const Nav = styled.div`
     flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start;
+    background: var(--white);
     padding: 3rem;
-    background: red;
-    width: 50%;
-    right: 0;
-    top: 8rem;
     height: 100vh;
+    right: 0;
+    left: 50%;
+    top: 0;
+    bottom: 0;
+    padding-top: 8rem;
+    transition: transform 0.25s ease-in-out;
+    transform: ${props => props.toggled ? `translateX(100%)` : `translateX(0)`};
+
+    ${props => !props.toggled && `
+      &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: -200%;
+        right: 100%;
+        background: rgba(0, 0, 0, 0.5);
+      }
+    `}
   }
 `;
 
@@ -50,6 +70,12 @@ export const DropdownContainer = styled.div`
   transition: 0.25s ease-in-out;
   padding-top: 1.6rem;
   top: 0.25rem;
+
+  @media(max-width: 850px) {
+    position: relative;
+    padding-top: 0;
+    top: 0;
+  }
 `;
 
 export const Dropdown = styled.div`
@@ -78,10 +104,31 @@ export const Dropdown = styled.div`
       }
     }
   }
+
+  @media(max-width: 850px) {
+    box-shadow: none;
+  }
 `;
 
 export const NavItem = styled.div`
   position: relative;
+  
+  > a {
+    display: flex;
+    align-items: center;
+    gap: 0.85rem;
+    text-decoration: none;
+    transition: color 0.25s ease-in-out;
+
+    span {
+      font-size: 1.45rem;
+      color: var(--gray);
+    }
+
+    img {
+      transition: 0.25s ease-in-out;
+    }
+  }
 
   &:hover {
     ${DropdownContainer} {
@@ -98,23 +145,6 @@ export const NavItem = styled.div`
       img {
         transform: rotate(180deg);
       }
-    }
-  }
-  
-  > a {
-    display: flex;
-    align-items: center;
-    gap: 0.85rem;
-    text-decoration: none;
-    transition: color 0.25s ease-in-out;
-
-    span {
-      font-size: 1.45rem;
-      color: var(--gray);
-    }
-
-    img {
-      transition: 0.25s ease-in-out;
     }
   }
 `;
@@ -164,6 +194,7 @@ export const Menu = styled.div`
   display: none;
 
   @media(max-width: 850px) {
+    z-index: 10;
     display: block;
   }
 `;

@@ -17,7 +17,8 @@ export function Home() {
         </Presentation>
 
         <Hero>
-          <img src="/assets/images/image-hero-desktop.png" alt="Hero Image" />
+          <img src="/assets/images/image-hero-desktop.png" alt="Hero Image" className="desktop" />
+          <img src="/assets/images/image-hero-mobile.png" alt="Hero Image" className="mobile"  />
         </Hero>
       </Main>
     </Container>
