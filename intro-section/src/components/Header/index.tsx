@@ -1,15 +1,15 @@
 import { useState } from "react";
-import { 
-  Container, 
-  Wrapper, 
-  Navbar, 
-  Nav, 
-  NavItem, 
-  DropdownContainer, 
-  Dropdown, 
-  Logo, 
+import {
+  Container,
+  Wrapper,
+  Navbar,
+  Nav,
+  NavItem,
+  Dropdown,
+  Logo,
   ButtonGroup,
-  Menu
+  Menu,
+  DropdownContainer
 } from "./styles";
 
 export function Header() {
@@ -27,30 +27,42 @@ export function Header() {
             <NavItem>
               <a href="#">
                 <span>Features</span>
-                <img src="/assets/images/icon-arrow-down.svg" alt="Icon" />
+                <img
+                  className="rotate"
+                  src="/assets/images/icon-arrow-down.svg"
+                  alt="Icon"
+                />
               </a>
 
               <DropdownContainer>
                 <Dropdown>
-                  <a href="#">
-                    <img src="/assets/images/icon-todo.svg" alt="Icon" />
-                    <span>Todo List</span>
-                  </a>
+                  <NavItem>
+                    <a href="#">
+                      <img src="/assets/images/icon-todo.svg" alt="Icon" />
+                      <span>Todo List</span>
+                    </a>
+                  </NavItem>
 
-                  <a href="#">
-                    <img src="/assets/images/icon-calendar.svg" alt="Icon" />
-                    <span>Calendar</span>
-                  </a>
+                  <NavItem>
+                    <a href="#">
+                      <img src="/assets/images/icon-calendar.svg" alt="Icon" />
+                      <span>Calendar</span>
+                    </a>
+                  </NavItem>
 
-                  <a href="#">
-                    <img src="/assets/images/icon-reminders.svg" alt="Icon" />
-                    <span>Reminders</span>
-                  </a>
+                  <NavItem>
+                    <a href="#">
+                      <img src="/assets/images/icon-reminders.svg" alt="Icon" />
+                      <span>Reminders</span>
+                    </a>
+                  </NavItem>
 
-                  <a href="#">
-                    <img src="/assets/images/icon-planning.svg" alt="Icon" />
-                    <span>Planning</span>
-                  </a>
+                  <NavItem>
+                    <a href="">
+                      <img src="/assets/images/icon-planning.svg" alt="Icon" />
+                      <span>Planning</span>
+                    </a>
+                  </NavItem>
                 </Dropdown>
               </DropdownContainer>
             </NavItem>
@@ -58,22 +70,32 @@ export function Header() {
             <NavItem>
               <a href="#">
                 <span>Company</span>
-                <img src="/assets/images/icon-arrow-down.svg" alt="Icon" />
+                <img
+                  className="rotate"
+                  src="/assets/images/icon-arrow-down.svg"
+                  alt="Icon"
+                />
               </a>
 
               <DropdownContainer>
                 <Dropdown>
-                  <a href="#">
-                    <span>History</span>
-                  </a>
+                  <NavItem>
+                    <a href="#">
+                      <span>History</span>
+                    </a>
+                  </NavItem>
 
-                  <a href="#">
-                    <span>Our Team</span>
-                  </a>
+                  <NavItem>
+                    <a href="#">
+                      <span>Our Team</span>
+                    </a>
+                  </NavItem>
 
-                  <a href="#">
-                    <span>Blog</span>
-                  </a>
+                  <NavItem>
+                    <a href="#">
+                      <span>Blog</span>
+                    </a>
+                  </NavItem>
                 </Dropdown>
               </DropdownContainer>
             </NavItem>
@@ -98,7 +120,7 @@ export function Header() {
         </ButtonGroup>
 
         <Menu onClick={() => setShowMenu(!showMenu)}>
-          { showMenu ? <img src="/assets/images/icon-close-menu.svg" alt="Icon" /> : <img src="/assets/images/icon-menu.svg" alt="Icon" /> }
+          {showMenu ? <img src="/assets/images/icon-close-menu.svg" alt="Icon" /> : <img src="/assets/images/icon-menu.svg" alt="Icon" />}
         </Menu>
       </Wrapper>
     </Container>

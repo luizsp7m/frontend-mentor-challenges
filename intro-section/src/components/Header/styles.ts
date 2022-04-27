@@ -12,10 +12,10 @@ export const Container = styled.div`
 
 export const Wrapper = styled.div`
   width: 100%;
+  height: 8rem;
   max-width: 1440px;
   padding: 0 3rem;
   margin: 0 auto;
-  height: 8rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -64,55 +64,42 @@ export const Nav = styled.div<NavProps>`
 
 export const DropdownContainer = styled.div`
   position: absolute;
-  left: 0;
+  right: 0;
+  min-width: 12.5rem;
+  padding-top: 2.2rem;
   visibility: hidden;
   opacity: 0;
   transition: 0.25s ease-in-out;
-  padding-top: 1.6rem;
-  top: 0.25rem;
 
   @media(max-width: 850px) {
+    display: none;
     position: relative;
-    padding-top: 0;
-    top: 0;
+    visibility: visible;
+    opacity: 1;
+    padding-top: 1.6rem;
   }
 `;
 
 export const Dropdown = styled.div`
+  background: var(--white);
   display: flex;
   flex-direction: column;
   gap: 1.6rem;
-  min-width: 12rem;
   padding: 1.8rem;
-  background: var(--white);
-  border-radius: 0.5rem;
-  box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.1);
-  transition: color 0.25s ease-in-out;
-
-  > a {
-    display: flex;
-    align-items: center;
-    gap: 1.6rem;
-    text-decoration: none;
-
-    span {
-      font-size: 1.45rem;
-      color: var(--gray);
-
-      &:hover {
-        color: var(--black);
-      }
-    }
-  }
+  border-radius: 0.35rem;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+  overflow: hidden;
 
   @media(max-width: 850px) {
     box-shadow: none;
+    background: none;
+    padding: 1.6rem 0.4rem;
   }
 `;
 
 export const NavItem = styled.div`
   position: relative;
-  
+
   > a {
     display: flex;
     align-items: center;
@@ -124,26 +111,33 @@ export const NavItem = styled.div`
       font-size: 1.45rem;
       color: var(--gray);
     }
+  }
 
-    img {
-      transition: 0.25s ease-in-out;
-    }
+  img {
+    transition: 0.25s ease-in-out;
   }
 
   &:hover {
-    ${DropdownContainer} {
-      visibility: visible;
-      opacity: 1;
-      top: 1rem;
-    }
-
     > a {
       span {
         color: var(--black);
       }
+    }
 
-      img {
-        transform: rotate(180deg);
+    ${DropdownContainer} {
+      visibility: visible;
+      opacity: 1;
+    }
+
+    img.rotate {
+      transform: rotate(180deg);
+    }
+  }
+
+  @media(max-width: 850px) {
+    &:hover {
+      ${DropdownContainer} {
+        display: flex;
       }
     }
   }

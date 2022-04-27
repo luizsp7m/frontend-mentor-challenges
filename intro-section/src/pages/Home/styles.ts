@@ -5,11 +5,12 @@ export const Container = styled.div`
 `;
 
 export const Main = styled.div`
-  min-height: 100vh;
   width: 100%;
+  height: 100vh;
   max-width: 1440px;
-  padding: 8rem 3rem;
   margin: 0 auto;
+
+  padding: 8rem 3rem 8rem 3rem;
 
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -18,6 +19,8 @@ export const Main = styled.div`
 
   @media(max-width: 1110px) {
     grid-template-columns: repeat(1, 1fr);
+    height: auto;
+    padding: 11rem 3rem 3rem 3rem;
   }
 `;
 
@@ -108,7 +111,6 @@ export const Hero = styled.div`
     img.mobile {
       display: block;
     }
-
 
     img.desktop {
       display: none;
