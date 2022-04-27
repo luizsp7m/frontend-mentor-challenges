@@ -103,7 +103,7 @@ export const NavItem = styled.div`
   > a {
     display: flex;
     align-items: center;
-    gap: 0.85rem;
+    gap: 1rem;
     text-decoration: none;
     transition: color 0.25s ease-in-out;
 
