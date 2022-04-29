@@ -25,7 +25,7 @@ export function Header() {
           </Logo>
 
           <Nav toggled={!showMenu}>
-            <NavItem>
+            <NavItem height={16.5}>
               <NavLink>
                 <span>Features</span>
                 <img className="rotate" src="/assets/images/icon-arrow-down.svg" alt="Icon" />
@@ -56,7 +56,7 @@ export function Header() {
               </DropdownContainer>
             </NavItem>
 
-            <NavItem>
+            <NavItem height={11.5}>
               <NavLink>
                 <span>Company</span>
                 <img className="rotate" src="/assets/images/icon-arrow-down.svg" alt="Icon" />

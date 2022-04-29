@@ -4,6 +4,10 @@ interface NavProps {
   toggled: boolean;
 }
 
+interface NavItemProps {
+  height?: number;
+}
+
 export const Container = styled.div`
   position: fixed;
   width: 100%;
@@ -70,13 +74,15 @@ export const DropdownContainer = styled.div`
   transition: 0.25s ease-in-out;
   visibility: hidden;
   opacity: 0;
+  overflow: hidden;
 
   @media(max-width: 850px) {
     visibility: visible;
     opacity: 1;
     position: relative;
-    padding-top: 1.6rem;
-    display: none;
+
+    height: 0;
+    padding-top: 0;
   }
 `;
 
@@ -90,7 +96,6 @@ export const Dropdown = styled.div`
   border-radius: 0.35rem;
   min-width: 13rem;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
-  overflow: hidden;
 
   @media(max-width: 850px) {
     box-shadow: none;
@@ -127,15 +132,10 @@ export const NavLink = styled.div`
   }
 `;
 
-export const NavItem = styled.div`
+export const NavItem = styled.div<NavItemProps>`
   position: relative;
 
   &:hover {
-    ${DropdownContainer} {
-      opacity: 1;
-      visibility: visible;
-    }
-
     ${NavLink} {
       img.rotate {
         transform: rotate(180deg);
@@ -146,7 +146,9 @@ export const NavItem = styled.div`
   @media(max-width: 850px) {
     &:hover {
       ${DropdownContainer} {
-        display: block;
+        /* height: auto; */
+        height: ${props => props.height ? `${props.height}rem` : "0rem"};
+        padding-top: 1.6rem;
       }
     }
   }
