@@ -136,6 +136,11 @@ export const NavItem = styled.div<NavItemProps>`
   position: relative;
 
   &:hover {
+    ${DropdownContainer} {
+      opacity: 1;
+      visibility: visible;
+    }
+    
     ${NavLink} {
       img.rotate {
         transform: rotate(180deg);
@@ -146,7 +151,6 @@ export const NavItem = styled.div<NavItemProps>`
   @media(max-width: 850px) {
     &:hover {
       ${DropdownContainer} {
-        /* height: auto; */
         height: ${props => props.height ? `${props.height}rem` : "0rem"};
         padding-top: 1.6rem;
       }
