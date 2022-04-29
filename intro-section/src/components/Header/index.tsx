@@ -5,11 +5,12 @@ import {
   Navbar,
   Nav,
   NavItem,
+  NavLink,
+  DropdownContainer,
   Dropdown,
   Logo,
   ButtonGroup,
   Menu,
-  DropdownContainer
 } from "./styles";
 
 export function Header() {
@@ -25,91 +26,69 @@ export function Header() {
 
           <Nav toggled={!showMenu}>
             <NavItem>
-              <a href="#">
+              <NavLink>
                 <span>Features</span>
-                <img
-                  className="rotate"
-                  src="/assets/images/icon-arrow-down.svg"
-                  alt="Icon"
-                />
-              </a>
+                <img className="rotate" src="/assets/images/icon-arrow-down.svg" alt="Icon" />
+              </NavLink>
 
               <DropdownContainer>
                 <Dropdown>
-                  <NavItem>
-                    <a href="#">
-                      <img src="/assets/images/icon-todo.svg" alt="Icon" />
-                      <span>Todo List</span>
-                    </a>
-                  </NavItem>
+                  <NavLink>
+                    <img src="/assets/images/icon-todo.svg" alt="Icon" />
+                    <span>Todo List</span>
+                  </NavLink>
 
-                  <NavItem>
-                    <a href="#">
-                      <img src="/assets/images/icon-calendar.svg" alt="Icon" />
-                      <span>Calendar</span>
-                    </a>
-                  </NavItem>
+                  <NavLink>
+                    <img src="/assets/images/icon-calendar.svg" alt="Icon" />
+                    <span>Calendar</span>
+                  </NavLink>
 
-                  <NavItem>
-                    <a href="#">
-                      <img src="/assets/images/icon-reminders.svg" alt="Icon" />
-                      <span>Reminders</span>
-                    </a>
-                  </NavItem>
+                  <NavLink>
+                    <img src="/assets/images/icon-reminders.svg" alt="Icon" />
+                    <span>Reminders</span>
+                  </NavLink>
 
-                  <NavItem>
-                    <a href="">
-                      <img src="/assets/images/icon-planning.svg" alt="Icon" />
-                      <span>Planning</span>
-                    </a>
-                  </NavItem>
+                  <NavLink>
+                    <img src="/assets/images/icon-planning.svg" alt="Icon" />
+                    <span>Planning</span>
+                  </NavLink>
                 </Dropdown>
               </DropdownContainer>
             </NavItem>
 
             <NavItem>
-              <a href="#">
+              <NavLink>
                 <span>Company</span>
-                <img
-                  className="rotate"
-                  src="/assets/images/icon-arrow-down.svg"
-                  alt="Icon"
-                />
-              </a>
+                <img className="rotate" src="/assets/images/icon-arrow-down.svg" alt="Icon" />
+              </NavLink>
 
               <DropdownContainer>
                 <Dropdown>
-                  <NavItem>
-                    <a href="#">
-                      <span>History</span>
-                    </a>
-                  </NavItem>
+                  <NavLink>
+                    <span>History</span>
+                  </NavLink>
 
-                  <NavItem>
-                    <a href="#">
-                      <span>Our Team</span>
-                    </a>
-                  </NavItem>
+                  <NavLink>
+                    <span>Our Team</span>
+                  </NavLink>
 
-                  <NavItem>
-                    <a href="#">
-                      <span>Blog</span>
-                    </a>
-                  </NavItem>
+                  <NavLink>
+                    <span>Blog</span>
+                  </NavLink>
                 </Dropdown>
               </DropdownContainer>
             </NavItem>
 
             <NavItem>
-              <a href="#">
+              <NavLink>
                 <span>Careers</span>
-              </a>
+              </NavLink>
             </NavItem>
 
             <NavItem>
-              <a href="#">
+              <NavLink>
                 <span>About</span>
-              </a>
+              </NavLink>
             </NavItem>
           </Nav>
         </Navbar>

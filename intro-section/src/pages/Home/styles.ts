@@ -31,7 +31,7 @@ export const Presentation = styled.div`
   height: 62rem;
   gap: 3.2rem;
   position: relative;
-  z-index: -10;
+  z-index: 5;
 
   h1 {
     font-size: 8rem;

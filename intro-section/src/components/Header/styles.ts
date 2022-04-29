@@ -8,6 +8,7 @@ export const Container = styled.div`
   position: fixed;
   width: 100%;
   background: var(--white);
+  z-index: 10;
 `;
 
 export const Wrapper = styled.div`
@@ -65,18 +66,17 @@ export const Nav = styled.div<NavProps>`
 export const DropdownContainer = styled.div`
   position: absolute;
   right: 0;
-  min-width: 12.5rem;
   padding-top: 2.2rem;
+  transition: 0.25s ease-in-out;
   visibility: hidden;
   opacity: 0;
-  transition: 0.25s ease-in-out;
 
   @media(max-width: 850px) {
-    display: none;
-    position: relative;
     visibility: visible;
     opacity: 1;
+    position: relative;
     padding-top: 1.6rem;
+    display: none;
   }
 `;
 
@@ -86,7 +86,9 @@ export const Dropdown = styled.div`
   flex-direction: column;
   gap: 1.6rem;
   padding: 1.8rem;
+  max-width: 12.5rem;
   border-radius: 0.35rem;
+  min-width: 13rem;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
   overflow: hidden;
 
@@ -97,47 +99,54 @@ export const Dropdown = styled.div`
   }
 `;
 
-export const NavItem = styled.div`
-  position: relative;
+export const NavLink = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  cursor: pointer;
 
-  > a {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    text-decoration: none;
-    transition: color 0.25s ease-in-out;
-
-    span {
-      font-size: 1.45rem;
-      color: var(--gray);
-    }
+  span {
+    font-size: 1.45rem;
+    color: var(--gray);
   }
 
   img {
-    transition: 0.25s ease-in-out;
+    width: 1.6rem;
+    height: auto;
+    object-fit: contain;
+  }
+
+  img.rotate {
+    transition: transform 0.25s ease-in-out;
   }
 
   &:hover {
-    > a {
-      span {
-        color: var(--black);
-      }
+    span {
+      color: var(--black);
     }
+  }
+`;
 
+export const NavItem = styled.div`
+  position: relative;
+
+  &:hover {
     ${DropdownContainer} {
-      visibility: visible;
       opacity: 1;
+      visibility: visible;
     }
 
-    img.rotate {
-      transform: rotate(180deg);
+    ${NavLink} {
+      img.rotate {
+        transform: rotate(180deg);
+      }
     }
   }
 
   @media(max-width: 850px) {
     &:hover {
       ${DropdownContainer} {
-        display: flex;
+        display: block;
       }
     }
   }
