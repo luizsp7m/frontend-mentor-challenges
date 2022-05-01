@@ -27,4 +27,5 @@
   <a href="https://confident-leakey-348d76.netlify.app/"><img width="250" src="./qr-code-component/design/desktop-preview.jpg"></a>
   <a href="https://dreamy-lalande-01bc34.netlify.app/"><img width="250" src="./advice-generator/design/desktop-preview.jpg"></a>
   <a href="https://lustrous-bienenstitch-60914c.netlify.app/"><img width="250" src="./interactive-rating-component/design/desktop-preview.jpg"></a>
+  <a href="https://lustrous-bienenstitch-60914c.netlify.app/"><img width="250" src="./intro-section/public/assets/design/desktop-preview.jpg"></a>
 </p>
