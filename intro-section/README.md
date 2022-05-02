@@ -13,7 +13,7 @@ Users should be able to:
 - View the optimal layout for the content depending on their device's screen size
 - See hover states for all interactive elements on the page
 
-![](./intro-section/public/assets/design/desktop-preview.jpg)
+![](./public/assets/design/desktop-design.jpg)
 
 ### Built with
 - React
