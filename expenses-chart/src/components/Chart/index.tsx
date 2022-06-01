@@ -20,6 +20,7 @@ export function Chart() {
           ))}
         </div>
       </div>
+      
       <Footer />
     </div>
   );
