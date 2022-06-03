@@ -15,6 +15,8 @@ Users should be able to:
 - See hover states for all interactive elements on the page
 - Bonus: See dynamically generated bars based on the data provided in the local JSON file
 
+![](./public/design/desktop-design.jpg)
+
 ### Built with
 - React
 - Tailwind CSS
