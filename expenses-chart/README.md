@@ -19,5 +19,5 @@ Users should be able to:
 
 ### Built with
 - React
-- Tailwind CSS
+- TailwindCSS
 - TypeScript
