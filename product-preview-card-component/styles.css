@@ -1,0 +1,166 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --dark-cyan: hsl(158, 36%, 37%);
+  --cream: hsl(30, 38%, 92%);
+  --very-dark-blue: hsl(212, 21%, 14%);
+  --dark-grayish-blue: hsl(228, 12%, 48%);
+  --white: hsl(0, 0%, 100%);
+  --hover-color: #1a4031;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body,
+input,
+button {
+  font-family: "Fraunces", serif;
+}
+
+main {
+  background-color: var(--cream);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1.2rem;
+
+  display: flex;
+  flex-direction: column;
+  gap: 2.2rem;
+}
+
+section {
+  background-color: var(--white);
+  overflow: hidden;
+  border-radius: 1.2rem;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  width: 100%;
+  max-width: 525px;
+}
+
+section img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+section aside {
+  padding: 1.2rem 2.2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+section aside span {
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.25rem;
+  color: var(--dark-grayish-blue);
+  letter-spacing: 0.25rem;
+}
+
+section aside h1 {
+  font-size: 2.45rem;
+  font-weight: 700;
+  max-width: 80%;
+  line-height: 2.6rem;
+  color: var(--very-dark-blue);
+}
+
+section aside p {
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.25rem;
+  color: var(--dark-grayish-blue);
+  line-height: 2rem;
+  font-weight: 600;
+}
+
+section aside div.price {
+  display: flex;
+  align-items: center;
+  gap: 1.6rem;
+}
+
+section aside div.price h2 {
+  font-size: 2.45rem;
+  color: var(--dark-cyan);
+}
+
+section aside div.price span {
+  font-size: 1rem;
+  text-decoration: line-through;
+  letter-spacing: 0rem;
+}
+
+section aside button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.2rem;
+  background: var(--dark-cyan);
+  padding: 1.35rem 0;
+  border-radius: 0.6rem;
+  outline: 0;
+  border: 0;
+  cursor: pointer;
+  transition: background 0.3s ease-in-out;
+}
+
+section aside button:hover {
+  background: var(--hover-color);
+}
+
+section aside button img {
+  width: 1.4rem;
+  height: auto;
+}
+
+section aside button span {
+  color: var(--white);
+  font-size: 1.05rem;
+  letter-spacing: 0rem;
+  font-weight: 600;
+}
+
+.attribution {
+  font-family: "Montserrat", sans-serif;
+  color: var(--dark-grayish-blue);
+  font-size: 1.2rem;
+}
+
+.attribution a {
+  color: var(--dark-cyan);
+}
+
+@media (max-width: 560px) {
+  html {
+    font-size: 56.25%;
+  }
+
+  section {
+    grid-template-columns: repeat(1, 1fr);
+    max-width: 100%;
+  }
+
+  section > img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    content: url("/images/image-product-mobile.jpg");
+  }
+
+  section aside {
+    padding: 2.2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: initial;
+    gap: 1.2rem;
+  }
+}
