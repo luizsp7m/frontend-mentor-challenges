@@ -8,8 +8,8 @@ export const Container = styled.div`
 `;
 
 export const Front = styled.div`
-  max-width: 44.7rem;
-  height: 24.5rem;
+  width: 445px;
+  height: 245px;
   background-image: url("/assets/bg-card-front.png");
   background-size: cover;
   background-position: center;
@@ -40,6 +40,23 @@ export const Front = styled.div`
 
   @media(max-width: 1024px) {
     order: 2;
+    bottom: 14.25rem;
+    margin-bottom: -14.25rem;
+    z-index: 10;
+  }
+
+  @media(max-width: 560px) {
+    width: 285px;
+    height: 156px;
+    gap: 1.2rem;
+    padding: 2.6rem;
+
+    bottom: 12.25rem;
+    margin-bottom: -12.25rem;
+
+    h1 {
+      font-size: 1.8rem;
+    }
   }
 `;
 
@@ -65,11 +82,15 @@ export const Circles = styled.div`
     border-radius: 50%;
     top: 3.2rem;
   }
+
+  @media(max-width: 560px) {
+    top: 2.2rem;
+  }
 `;
 
 export const Versus = styled.div`
-  width: 44.7rem;
-  height: 24.5rem;
+  width: 445px;
+  height: 245px;
   background-image: url("/assets/bg-card-back.png");
   background-size: cover;
   background-position: center;
@@ -86,6 +107,15 @@ export const Versus = styled.div`
   }
 
   @media(max-width: 1024px) {
-    margin-left: 4.8rem;
+
+  }
+
+  @media(max-width: 560px) {
+    width: 285px;
+    height: 156px;
+
+    span {
+      top: 8.85rem;
+    }
   }
 `;

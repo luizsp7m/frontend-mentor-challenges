@@ -7,7 +7,7 @@ export const Container = styled.div`
   justify-content: center;
   align-items: center;
   position: relative;
-  background: white;
+  background: ${({ theme }) => theme.colors.white };
 
   &::before {
     content: "";
@@ -40,7 +40,9 @@ export const Main = styled.div`
   justify-content: space-around;
 
   @media(max-width: 1024px) {
+    min-height: 90vh;
     flex-direction: column;
-    gap: 6.4rem;
+    gap: 4.8rem;
+    padding: 1.6rem;
   }
 `;

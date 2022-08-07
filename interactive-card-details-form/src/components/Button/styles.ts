@@ -11,9 +11,9 @@ export const Container = styled.button`
   color: ${({ theme }) => theme.colors.white};
   font-size: 1.65rem;
   letter-spacing: 0.1rem;
-  transition: background 0.2s ease-in-out;
+  transition: opacity 0.2s ease-in-out;
 
   &:hover {
-    background: ${({ theme }) => theme.colors.violet.medium};
+    opacity: 0.80;
   }
 `;

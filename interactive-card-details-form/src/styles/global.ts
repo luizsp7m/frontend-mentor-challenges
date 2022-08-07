@@ -15,7 +15,7 @@ export const GlobalStyle = createGlobalStyle`
     font-family: "Space Grotesk", sans-serif;
   }
 
-  @media(max-width: 475px) {
+  @media(max-width: 560px) {
     html {
       font-size: 50%;
     }
