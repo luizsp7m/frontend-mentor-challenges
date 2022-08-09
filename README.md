@@ -30,4 +30,5 @@
   <a href="https://lustrous-bienenstitch-60914c.netlify.app/"><img width="250" src="./intro-section/public/assets/design/desktop-preview.jpg"></a>
   <a href="https://guileless-gingersnap-c9611a.netlify.app/"><img width="250" src="./expenses-chart/public/design/desktop-preview.jpg"></a>
   <a href="https://fastidious-cranachan-b55b85.netlify.app/"><img width="250" src="./product-preview-card-component/design/desktop-preview.jpg"></a>
+  <a href="https://funny-caramel-4bbd4d.netlify.app/"><img width="250" src="./interactive-card-details-form/public/design/desktop-preview.jpg"></a>
 </p>
